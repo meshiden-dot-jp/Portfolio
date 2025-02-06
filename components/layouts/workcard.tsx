@@ -21,7 +21,7 @@ const workcard = () => {
                     <CardDescription className='text-xs'>yyyy/mm/dd</CardDescription>
                 </CardContent>
                 <CardFooter className='p-0 pt-1'>
-                    <CardTitle className='text-base'>あのイーハトーヴォの白く透き通った風</CardTitle>
+                    <CardTitle className='text-base font-medium'>あのイーハトーヴォの白く透き通った風</CardTitle>
                 </CardFooter>
             </Card>
 
