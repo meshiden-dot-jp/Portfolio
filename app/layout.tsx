@@ -7,6 +7,7 @@ import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
 
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,6 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css"></link>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
