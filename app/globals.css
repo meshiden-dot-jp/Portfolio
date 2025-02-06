@@ -8,7 +8,7 @@ body {
   font-style: normal;
 }
 
-h1,h2,h3{
+h1,h2,h3,h4{
   font-family: din-2014, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -24,6 +24,19 @@ h4{
   font-size: 32px;
   padding-top:40px;
   padding-bottom: 16px;
+}
+
+td{
+  padding:30px 0;
+}
+
+th,td{
+  border-bottom:0.5px black solid;
+  vertical-align: text-top;
+}
+
+label{
+  padding:10px 0;
 }
 
 @layer utilities {

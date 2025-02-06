@@ -1,10 +1,10 @@
 import Image from "next/image";
 
 import Work from "@/components/layouts/work";
-import Profile from "@/components/layouts/profile";
-import News from "@/components/layouts/news";
-import Techblog from "@/components/layouts/techblog";
-import Contact from "@/components/layouts/contact";
+import Profile from "@/components/layouts/top/profile";
+import News from "@/components/layouts/top/news";
+import Techblog from "@/components/layouts/top/techblog";
+import Contact from "@/components/layouts/top/contact";
 
 export default function Home() {
   return (

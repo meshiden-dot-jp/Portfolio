@@ -1,5 +1,5 @@
 import React from 'react'
-import Workcard from './workcard'
+import Workcard from '../workcard'
 
 const techblog = () => {
   return (
