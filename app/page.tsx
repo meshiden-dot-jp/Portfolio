@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Work from "@/components/layouts/work";
+import Work from "@/components/layouts/top/work";
 import Profile from "@/components/layouts/top/profile";
 import News from "@/components/layouts/top/news";
 import Techblog from "@/components/layouts/top/techblog";

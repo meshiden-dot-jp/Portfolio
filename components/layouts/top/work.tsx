@@ -1,11 +1,11 @@
 import React from 'react'
-import Workcard from './workcard'
+import Workcard from '../workcard'
 
 const work = () => {
     return (
-        <div className='w-[70%] m-auto'>
+        <div className='sm:w-[70%] w-[90%] m-auto'>
             <h3>Work</h3>
-            <div className='grid grid-cols-3 gap-16'>
+            <div className='grid sm:grid-cols-3 grid-cols-1 gap-16'>
                 <Workcard />
                 <Workcard />
                 <Workcard />

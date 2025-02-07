@@ -36,7 +36,7 @@ const ContactPage = () => {
         <div className="pb-4">
           <div className="pb-6">
             <label htmlFor="field-name">名前・会社名
-              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[2px] rounded-sm">必須</span>
+              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
             </label>
             <Input
               className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
@@ -50,7 +50,7 @@ const ContactPage = () => {
 
           <div className="pb-6">
             <label htmlFor="field-email">メールアドレス
-              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[2px] rounded-sm">必須</span>
+              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
             </label>
             <Input
               className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
@@ -75,7 +75,7 @@ const ContactPage = () => {
 
           <div className="pb-12">
             <label htmlFor="field-message">お問い合わせ内容
-              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[2px] rounded-sm">必須</span>
+              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
             </label>
             <Textarea
               className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
@@ -87,7 +87,7 @@ const ContactPage = () => {
           </div>
 
           <div className="flex justify-center">
-            <Button className="w-1/4" type="submit">送信する</Button>
+            <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
           </div>
         </div>
       </form>

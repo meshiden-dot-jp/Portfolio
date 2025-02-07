@@ -8,13 +8,13 @@ const ThanksPage = () => {
   const router = useRouter(); // ✅ useRouter をコンポーネント内で定義
 
   return (
-    <div className="w-[70%] m-auto text-center py-20">
-      <h1 className="text-2xl font-bold mb-4">お問い合わせありがとうございました</h1>
-      <p className="mb-6">
+    <div className="sm:w-[70%] w-[90%] m-auto text-center py-40">
+      <h1 className="text-2xl font-bold mb-8">お問い合わせありがとうございました</h1>
+      <p className="mb-16">
         お問い合わせを受け付けました。  
         近日中に担当者よりご連絡いたします。
       </p>
-      <Button onClick={() => router.push("/")} className="w-1/4 mb-auto">
+      <Button onClick={() => router.push("/")} className="sm:w-1/4 w-full mb-auto">
         ホームへ戻る
       </Button>
     </div>
