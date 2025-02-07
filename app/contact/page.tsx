@@ -20,7 +20,7 @@ const ContactPage = () => {
   }, [submitted]);
 
   return (
-    <div className="w-[70%] m-auto pb-12">
+    <div className="sm:w-[70%] w-[90%] m-auto pb-12">
       <h3>Contact</h3>
       <p className="pb-12">
         本ページに関するお問い合わせは、以下のフォームにご記入ください。

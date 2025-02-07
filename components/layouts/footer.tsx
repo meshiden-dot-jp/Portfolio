@@ -12,7 +12,7 @@ const footer = () => {
                 </h2>
             </a>
 
-            <ul className='grid grid-cols-1 gap-3 text-right'>
+            <ul className='grid grid-cols-1 gap-3 text-right font-[din-2014] font-bold'>
             <li><a href="/work">Work</a></li>
                 <li><a href="/profile">Profile</a></li>
                 <li><a href="/news">News</a></li>

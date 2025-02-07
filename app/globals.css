@@ -26,6 +26,19 @@ h4{
   padding-bottom: 16px;
 }
 
+table{
+  width:100%;
+  font-size:12px;
+}
+
+tr{
+  text-align:left;
+}
+
+th{
+  padding:10px 0;
+}
+
 td{
   padding:30px 0;
 }

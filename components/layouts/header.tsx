@@ -11,7 +11,7 @@ const header = () => {
                 </h2>
             </a>
 
-            <ul className='flex gap-6'>
+            <ul className='flex gap-6 font-[din-2014] font-bold'>
                 <li><a href="/work">Work</a></li>
                 <li><a href="/profile">Profile</a></li>
                 <li><a href="/news">News</a></li>

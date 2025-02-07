@@ -33,6 +33,7 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css"></link>
+        <script src="https://kit.fontawesome.com/4e6b2556d7.js"></script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
