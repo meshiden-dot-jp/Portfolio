@@ -45,7 +45,6 @@ export default function RootLayout({
         <Footer />
         <Lowernav />
         <Copyright />
-        <Copyright />
       </body>
     </html>
   );
