@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/layouts/breadcrumb";
 import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
+import Script from "next/script";
 
 
 const geistSans = localFont({
@@ -33,7 +34,7 @@ export default function RootLayout({
     <html lang="ja">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css"></link>
-        <script src="https://kit.fontawesome.com/4e6b2556d7.js"></script>
+        <Script src="https://kit.fontawesome.com/4e6b2556d7.js"></Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

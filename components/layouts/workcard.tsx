@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from "next/image";
 
 import {
     Card,
@@ -14,7 +15,7 @@ const workcard = () => {
         <div>
             <Card className='p-0 border-none shadow-none'>
                 <CardHeader className='p-0'>
-                    <img src="https://placehold.jp/900x900.png" alt="" />
+                    <Image src="https://placehold.jp/900x900.png" alt="" />
                 </CardHeader>
                 <CardContent className='p-0 pt-3'>
                     <CardDescription className='text-xs'>yyyy/mm/dd</CardDescription>
