@@ -15,7 +15,7 @@ const workcard = () => {
         <div>
             <Card className='p-0 border-none shadow-none'>
                 <CardHeader className='p-0'>
-                    <Image src="https://placehold.jp/900x900.png" alt="" />
+                    <Image src="https://placehold.jp/900x900.png" alt="サンプル画像" width={900} height={900} />
                 </CardHeader>
                 <CardContent className='p-0 pt-3'>
                     <CardDescription className='text-xs'>yyyy/mm/dd</CardDescription>
