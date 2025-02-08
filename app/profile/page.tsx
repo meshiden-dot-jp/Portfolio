@@ -7,7 +7,7 @@ const page = () => {
       <div className='sm:w-1/2 relative'>
         <div className='sm:sticky top-20 sm:pb-32 '>
           <h3>Profile</h3>
-          <Image src="https://placehold.jp/900x900.png" alt="イメージ画像" />
+          <Image src="https://placehold.jp/900x900.png" alt="サンプル画像" />
         </div>
       </div>
       <div className='sm:w-1/2 sm:pl-16 sm:pt-80 pb-24'>
