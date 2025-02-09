@@ -19,11 +19,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "iIDa Frontend Engineer/UI Designer",
-  description: "This is iIDa's portfolio site.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,6 +28,15 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <title>iIDa ポートフォリオサイト</title>
+        <meta property="og:title" content="iIDa ポートフォリオサイト" />
+        <meta property="og:description" content="フロントエンドエンジニア兼UIデザーナー、iIDaのポートフォリオサイトです。" />
+        <meta property="og:image" content="あなたのサイトの画像URL" />
+        <meta property="og:url" content="https://meshiden.jp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name='twitter:title' content='iIDa ポートフォリオサイト' />
+        <meta name='twitter:description' content='フロントエンドエンジニア兼UIデザーナー、iIDaのポートフォリオサイトです。' />
+        <meta name='twitter:image' content='画像URL' />
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css"></link>
         <Script src="https://kit.fontawesome.com/4e6b2556d7.js"></Script>
         <Script
