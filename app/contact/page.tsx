@@ -88,14 +88,10 @@ const ContactPage = () => {
 
           <div className="flex justify-center">
             <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
-            <button className="g-recaptcha sm:w-1/4 w-full"
-              data-sitekey={process.env.NEXT_PUBLIC_RECAPCHA_SITE_KEY}
-              data-callback='onSubmit'
-              data-action='submit'>送信する</button>
           </div>
         </div>
       </form>
-
+      
       <iframe
         name="hidden_iframe"
         id="hidden_iframe"
