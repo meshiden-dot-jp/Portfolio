@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layouts/header";
-import Breadcrumb from "@/components/layouts/breadcrumb";
 import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
