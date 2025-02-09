@@ -6,7 +6,6 @@ import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
-import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,7 +36,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -45,9 +43,9 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
-      <Head>
-        <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css"></link>
-      </Head>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         {children}
@@ -72,6 +70,9 @@ export default function RootLayout({
             </Script>
           </>
         )}
+
+        {/* Google reCAPTCHA のスクリプト */}
+        <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       </body>
     </html>
   );
