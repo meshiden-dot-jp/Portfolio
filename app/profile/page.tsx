@@ -1,5 +1,7 @@
 import React from 'react'
 import Image from "next/image";
+import Biography from '@/components/layouts/profile/biography';
+import Award from '@/components/layouts/profile/award';
 
 const page = () => {
   return (
@@ -11,7 +13,7 @@ const page = () => {
         </div>
       </div>
       <div className='sm:w-1/2 sm:pl-16 sm:pt-80 pb-24'>
-        <div className='sm:pb-32 pt-8'>
+        <div className='pt-8'>
           <h2 className='text-4xl'>
             Frontend Engineer <br />
             UI Designer
@@ -30,49 +32,12 @@ const page = () => {
           <li><a href="https://www.github.com/meshiden-dot-jp"><i className="fa-brands fa-github"></i></a></li>
           <li><a href="https://www.behance.net/meganenasi61c5"><i className="fa-brands fa-behance"></i></a></li>
         </ul>
+
         <h4>Biography</h4>
-        <table>
-          <tbody>
-            <tr>
-              <th className='sm:w-1/5 w-1/6'>YEAR</th>
-              <th>BIOGRAPHY</th>
-            </tr>
-            <tr>
-              <td>2025</td>
-              <td>
-                青山学院大学理工学部情報テクノロジー学科　在学中<br />
-                青山学院大学情報メディアセンター学生スタッフ
-              </td>
-            </tr>
-            <tr>
-              <td>2023</td>
-              <td>神奈川県立秦野高等学校　卒業</td>
-            </tr>
-            <tr>
-              <td>2004</td>
-              <td>神奈川県平塚市生まれ</td>
-            </tr>
-          </tbody>
-        </table>
+        <Biography/>
+        
         <h4>Award</h4>
-        <table>
-          <tbody>
-            <tr>
-              <th className='sm:w-1/5 w-1/6'>YEAR</th>
-              <th>BIOGRAPHY</th>
-            </tr>
-            <tr>
-              <td>2024</td>
-              <td><a href="https://topaz.dev/projects/ac3c682bb55442262681">Progateハッカソン　優秀賞　<i className="fa-solid fa-arrow-up-right-from-square"></i></a></td>
-            </tr>
-            <tr>
-              <td>2022</td>
-              <td>
-                <a href="https://express.adobe.com/page/SQ8KHbD94RDKy/">SDGsクリエイティブアイデアコンテスト2021　優秀賞　<i className="fa-solid fa-arrow-up-right-from-square"></i></a><br />
-                平塚秦野地区県立学校交通安全大会ポスターの部　最優秀賞
-              </td>
-            </tr></tbody>
-        </table>
+        <Award />
       </div>
     </div>
   )

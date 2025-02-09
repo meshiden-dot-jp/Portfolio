@@ -30,7 +30,7 @@ const header = () => {
                             <SheetHeader>
                                 <SheetTitle></SheetTitle>
                                 <SheetDescription>
-                                    <ul className='text-3xl text-black grid grid-cols-1 gap-8 pt-16 text-center font-[din-2014] font-bold'>
+                                    <ul className='text-2xl text-black grid grid-cols-1 gap-8 pt-16 text-center font-[din-2014] font-bold'>
                                         <li><a href="/work">Work</a></li>
                                         <li><a href="/profile">Profile</a></li>
                                         <li><a href="/news">News</a></li>
@@ -43,7 +43,7 @@ const header = () => {
                     </Sheet>
                 </div>
 
-                <ul className='gap-6 font-[din-2014] font-bold sm:flex hidden '>
+                <ul className='gap-6 font-[din-2014] font-bold sm:flex hidden text-xl'>
                     <li><a href="/work">Work</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/news">News</a></li>

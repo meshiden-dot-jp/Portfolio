@@ -2,10 +2,10 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation"; // ✅ App Router 用に修正
+import { useRouter } from "next/navigation";
 
 const ThanksPage = () => {
-  const router = useRouter(); // ✅ useRouter をコンポーネント内で定義
+  const router = useRouter();
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto text-center py-40">

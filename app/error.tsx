@@ -6,13 +6,21 @@ import Link from 'next/link'
 
 const error = () => {
   return (
-    <div className="sm:w-[70%] w-[90%] m-auto py-24">
-            <h1 className='text-center text-9xl'>500</h1>
-            <h2 className='text-center text-4xl'>Page not found.</h2>
-            <p className='text-center text-lg pt-10'>申し訳ございません。<br />お探しのページは表示できませんでした。</p>
+    <div className="sm:w-[70%] w-[90%] m-auto">
+            <h3 className=''>500</h3>
+            <div className='sm:flex gap-12'>
+                <div className='sm:w-1/2'>
+                    <h4 className='pt-0'>指定されたページは存在しません</h4>
+                    <p className=''>アクセスしていただいたページは、削除もしくは移動した可能性があります。</p>
+                </div>
+                <div className='sm:w-1/2'>
+                    <h4 className='sm:pt-0'>Page not found</h4>
+                    <p className=''>The page you have accessed may have been deleted or moved.</p>
+                </div>
+            </div>
 
             <div className="flex justify-center pt-10">
-                <Button asChild>
+                <Button asChild className='mt-3 mb-24 sm:mt-20'>
                     <Link className="sm:w-1/4 w-full" href="/">ホームへ戻る</Link>
                 </Button>
 
