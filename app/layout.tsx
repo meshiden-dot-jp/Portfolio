@@ -20,6 +20,24 @@ const geistMono = localFont({
   display: "swap",
 });
 
+export const metadata: Metadata = {
+  title: "iIDa ポートフォリオサイト",
+  description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
+  openGraph: {
+    title: "iIDa ポートフォリオサイト",
+    description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
+    url: "https://meshiden.jp",
+    images: [{ url: "https://yourdomain.com/image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iIDa ポートフォリオサイト",
+    description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
+    images: ["https://yourdomain.com/image.png"],
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -28,15 +46,6 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <Head>
-        <title>iIDa ポートフォリオサイト</title>
-        <meta property="og:title" content="iIDa ポートフォリオサイト" />
-        <meta property="og:description" content="フロントエンドエンジニア兼UIデザーナー、iIDaのポートフォリオサイトです。" />
-        <meta property="og:image" content="https://yourdomain.com/image.png" />
-        <meta property="og:url" content="https://meshiden.jp" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="iIDa ポートフォリオサイト" />
-        <meta name="twitter:description" content="フロントエンドエンジニア兼UIデザーナー、iIDaのポートフォリオサイトです。" />
-        <meta name="twitter:image" content="https://yourdomain.com/image.png" />
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css"></link>
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
