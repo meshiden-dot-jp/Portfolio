@@ -19,7 +19,7 @@ const breadcrumb = () => {
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/profile">Profile</BreadcrumbLink>
+                        <BreadcrumbLink href="/components">Components</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>

@@ -41,7 +41,6 @@ export default function RootLayout({
       > 
         <Header />
         {children}
-        <Breadcrumb />
         <Footer />
         <Lowernav />
         <Copyright />
