@@ -1,5 +1,6 @@
+"use client";
+import { CldImage } from 'next-cloudinary';
 import React from 'react'
-import Image from "next/image";
 import Biography from '@/components/layouts/profile/biography';
 import Award from '@/components/layouts/profile/award';
 
@@ -9,7 +10,16 @@ const page = () => {
       <div className='sm:w-1/2 relative'>
         <div className='sm:sticky top-20 sm:pb-32 '>
           <h3>Profile</h3>
-          <Image src="https://placehold.jp/900x900.png" alt="サンプル画像"  width={900} height={900}  />
+          <CldImage
+            src="icon" // Use this sample image or upload your own via the Media Explorer
+            width="900" // Transform the image: auto-crop to square aspect_ratio
+            height="900"
+            alt='頭が爆発したユニコーンのアイコン' 
+            crop={{
+              type: 'auto',
+              source: true,
+            }}
+          />
         </div>
       </div>
       <div className='sm:w-1/2 sm:pl-16 sm:pt-80 pb-24'>
@@ -34,8 +44,8 @@ const page = () => {
         </ul>
 
         <h4>Biography</h4>
-        <Biography/>
-        
+        <Biography />
+
         <h4>Award</h4>
         <Award />
       </div>
