@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>

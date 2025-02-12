@@ -37,6 +37,14 @@ const nextConfig = {
         hostname: "use.typekit.net",
       },
     ],
+    domains: [
+      "images.microcms-assets.io", 
+      "res.cloudinary.com", 
+      "placehold.jp", 
+      "nextjs.org", 
+      "example.com", 
+      "use.typekit.net"
+    ],
   },
   async headers() {
     return [
@@ -58,6 +66,10 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value: cspHeader.replace(/\n/g, ""),
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "img-src 'self' data: https://images.microcms-assets.io https://res.cloudinary.com https://placehold.jp https://nextjs.org https://example.com https://use.typekit.net;",
           },
         ],
       },

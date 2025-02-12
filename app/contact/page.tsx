@@ -78,6 +78,7 @@ const ContactPage = () => {
               <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
             </label>
             <Textarea
+              field-sizing-content="true"
               className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
               name="entry.1450192857"
               id="field-message"

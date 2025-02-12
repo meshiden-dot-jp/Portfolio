@@ -28,7 +28,7 @@ const page = () => {
             Frontend Engineer <br />
             UI Designer
           </h2>
-          <h1 className='text-9xl pt-2 pb-16'>iIDa</h1>
+          <h1 className='text-9xl pb-8'>iIDa</h1>
           <p>
             クリエイターをマネジメントする事務所やWEB制作会社などを経て、2015年にイラストレーターとして独立。シンプルな線と目を引く色づかいを特徴として、広告キャンペーン、書籍の表紙、商品パッケージなどの「デザインにフィットする」イラストを描く。プライベートでは3歳の息子を育てる。
           </p>

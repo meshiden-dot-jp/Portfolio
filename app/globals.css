@@ -38,27 +38,10 @@ h6{
   padding-bottom: 24px;
 }
 
-table{
-  width:100%;
-  font-size:12px;
-}
-
-tr{
-  text-align:left;
-}
-
-th{
-  padding:10px 0;
-}
-
-td{
-  padding:30px 0;
-}
-
-th,td{
-  border-bottom:0.5px black solid;
-  vertical-align: text-top;
-}
+/* figure{
+  width:90%;
+  margin:auto;
+} */
 
 label{
   padding:10px 0;
