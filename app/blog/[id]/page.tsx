@@ -1,6 +1,8 @@
 // app/blog/[id]/page.tsx
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 // ブログの詳細データを取得する関数
 async function getBlogData(id: string | undefined): Promise<Blog | null> {
@@ -59,6 +61,9 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
       <h3>{blog.title}</h3>
       <p>{blog.publishedAt}</p>
       <div dangerouslySetInnerHTML={{ __html: blog.body }} />
+      <a href="/blog">
+        <Button>一覧に戻る</Button>
+      </a>
     </div>
   );
 }
