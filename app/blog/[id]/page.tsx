@@ -2,7 +2,6 @@
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 
 // ブログの詳細データを取得する関数
 async function getBlogData(id: string | undefined): Promise<Blog | null> {
