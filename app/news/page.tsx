@@ -34,7 +34,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="sm:w-[70%] w-[90%] m-auto">
+    <div className="sm:w-[70%] w-[90%] m-auto pb-32">
       <h3>News</h3>
 
       {/* 🔄 ローディング表示 */}

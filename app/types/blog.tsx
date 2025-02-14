@@ -6,6 +6,7 @@ export type Blog = {
     revisedAt: string;
     title: string;
     body: string;
+    link:string;
     header_image: {
       url: string;
       width: number;
