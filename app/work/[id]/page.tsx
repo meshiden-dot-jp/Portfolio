@@ -1,4 +1,4 @@
-// app/blog/[id]/page.tsx
+// app/work/[id]/page.tsx
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
@@ -12,7 +12,7 @@ async function getBlogData(id: string | undefined): Promise<Blog | null> {
 
   try {
     const data = await client.get({
-      endpoint: `tech-blog/${id}`,
+      endpoint: `work/${id}`,
     });
     return data;
   } catch (error) {
@@ -24,7 +24,7 @@ async function getBlogData(id: string | undefined): Promise<Blog | null> {
 // 静的なパスを生成する関数（SSG 相当）
 export async function generateStaticParams() {
   try {
-    const data = await client.get({ endpoint: "tech-blog" });
+    const data = await client.get({ endpoint: "work" });
 
     if (!data || !data.contents) {
       console.error("No blog data found!");
@@ -60,7 +60,7 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
       <h3>{blog.title}</h3>
       <p>{new Date(blog.publishedAt).toLocaleDateString()}</p>
       <div dangerouslySetInnerHTML={{ __html: blog.body }} />
-      <a href="/blog">
+      <a href="/work">
         <Button>一覧に戻る</Button>
       </a>
     </div>

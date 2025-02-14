@@ -15,7 +15,7 @@ export default function BlogPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const data = await client.get({ endpoint: "work", queries: { limit: 6 } });
+        const data = await client.get({ endpoint: "work", queries: { limit: 100 } });
         setBlog(data.contents || []);
       } catch (error) {
         console.error("Error fetching microCMS data:", error);
@@ -28,7 +28,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="sm:w-[70%] w-[90%] m-auto">
+    <div className="sm:w-[70%] w-[90%] m-auto pb-32">
       <h3>Work</h3>
 
       {/* 🔄 ローディング表示 */}
@@ -54,7 +54,7 @@ export default function BlogPage() {
                       <Image
                         src={post.header_image.url}
                         alt={post.title}
-                        width={900}
+                        width={1600}
                         height={900}
                         className="object-cover"
                       />
