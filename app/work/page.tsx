@@ -54,7 +54,7 @@ export default function BlogPage() {
                       <Image
                         src={post.header_image.url}
                         alt={post.title}
-                        width={1600}
+                        width={900}
                         height={900}
                         className="object-cover"
                       />

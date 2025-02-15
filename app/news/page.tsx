@@ -8,8 +8,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table"
 
@@ -51,18 +49,13 @@ export default function BlogPage() {
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
         <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>公開日</TableHead>
-              <TableHead>タイトル</TableHead>
-            </TableRow>
-          </TableHeader>
           <TableBody>
             {blog.map((post) => (
               <TableRow key={post.id}>
-                <TableCell>{new Date(post.publishedAt).toLocaleDateString()}</TableCell>
+                <TableCell className="align-text-top">{new Date(post.publishedAt).toLocaleDateString()}</TableCell>
+                <TableCell className="text-[10px] align-text-top min-w-32 font-bold text-center"><p className="bg-gray-100 text-gray-500">{post.tag}</p></TableCell>
                 <TableCell>
-                  <Link href={post.link} className="text-blue-500 hover:underline">
+                  <Link href={post.link} className="hover:underline">
                     {post.title}
                   </Link>
                 </TableCell>

@@ -2,6 +2,7 @@
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 // ブログの詳細データを取得する関数
 async function getBlogData(id: string | undefined): Promise<Blog | null> {
@@ -56,7 +57,14 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
   }
 
   return (
-    <div className="sm:w-[70%] w-[90%] m-auto pb-32">
+    <div className="sm:w-[50%] w-[90%] m-auto pt-12 pb-32">
+      <Image
+        src={blog.header_image.url}
+        alt={blog.title}
+        width={900}
+        height={900}
+        className="object-cover"
+      />
       <h3>{blog.title}</h3>
       <p>{new Date(blog.publishedAt).toLocaleDateString()}</p>
       <div dangerouslySetInnerHTML={{ __html: blog.body }} />

@@ -6,22 +6,25 @@ import Image from "next/image";
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function BlogPage() {
   const [blog, setBlog] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true); // ローディング状態を追加
-  const [error, setError] = useState(false); // エラー状態を追加
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [hasMore, setHasMore] = useState(false); // 記事が6つ以上あるかを判定
 
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const data = await client.get({ endpoint: "work", queries: { limit: 6 } });
-        setBlog(data.contents || []);
+        const data = await client.get({ endpoint: "work", queries: { limit: 7 } }); // ✅ limitを7に変更
+        setBlog(data.contents.slice(0, 6) || []); // ✅ 6記事のみ表示
+        setHasMore(data.contents.length > 6); // ✅ 記事が6つ以上あるか判定
       } catch (error) {
         console.error("Error fetching microCMS data:", error);
-        setError(true); // エラーが発生したら `error` を `true` に設定
+        setError(true);
       } finally {
-        setLoading(false); // ローディングを終了
+        setLoading(false);
       }
     }
     fetchBlogs();
@@ -29,7 +32,9 @@ export default function BlogPage() {
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto">
-      <h3>Work</h3>
+      <a href="/work">
+        <h3>Work</h3>
+      </a>
 
       {/* 🔄 ローディング表示 */}
       {loading && <p className="text-gray-500">記事を取得しています...</p>}
@@ -44,35 +49,48 @@ export default function BlogPage() {
 
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
-        <ul className="grid sm:grid-cols-3 grid-cols-1 gap-16">
-          {blog.map((post) => (
-            <li key={post.id}>
-              <Link href={`/work/${post.id}`}>
-                <Card className="p-0 border-none shadow-none">
-                  <CardHeader className="p-0">
-                    {post.header_image?.url && (
-                      <Image
-                        src={post.header_image.url}
-                        alt={post.title}
-                        width={900}
-                        height={900}
-                        className="object-cover"
-                      />
-                    )}
-                  </CardHeader>
-                  <CardContent className="p-0 pt-3">
-                    <CardDescription className="text-xs">
-                      <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
-                    </CardDescription>
-                  </CardContent>
-                  <CardFooter className="p-0 pt-1">
-                    <CardTitle className="text-base font-medium">{post.title}</CardTitle>
-                  </CardFooter>
-                </Card>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="grid sm:grid-cols-3 grid-cols-1 gap-16">
+            {blog.map((post) => (
+              <li key={post.id}>
+                <Link href={`/work/${post.id}`}>
+                  <Card className="p-0 border-none shadow-none">
+                    <CardHeader className="p-0">
+                      {post.header_image?.url && (
+                        <Image
+                          src={post.header_image.url}
+                          alt={post.title}
+                          width={900}
+                          height={900}
+                          className="object-cover"
+                        />
+                      )}
+                    </CardHeader>
+                    <CardContent className="p-0 pt-3">
+                      <CardDescription className="text-xs">
+                        <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+                      </CardDescription>
+                    </CardContent>
+                    <CardFooter className="p-0 pt-1">
+                      <CardTitle className="text-base font-medium">{post.title}</CardTitle>
+                    </CardFooter>
+                  </Card>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* ✅ 記事が6つ以上あるときのみ表示 */}
+          {hasMore && (
+            <div className="flex justify-end mt-4">
+              <a href="/work">
+                <Button variant="ghost">
+                  すべて見る <i className="fa-solid fa-chevron-right"></i>
+                </Button>
+              </a>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

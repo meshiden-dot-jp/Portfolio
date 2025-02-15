@@ -6,6 +6,7 @@ import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
+import Breadcrumb from "@/components/layouts/breadcrumb";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         {children}
+        <Breadcrumb/>
         <Footer />
         <Lowernav />
         <Copyright />

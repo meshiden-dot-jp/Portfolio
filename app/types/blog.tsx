@@ -7,6 +7,7 @@ export type Blog = {
     title: string;
     body: string;
     link:string;
+    tag:string;
     header_image: {
       url: string;
       width: number;
