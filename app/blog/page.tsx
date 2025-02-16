@@ -29,7 +29,7 @@ export default function BlogPage() {
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-32">
-      <h3>Tech Blog</h3>
+      <h1>Tech Blog</h1>
 
       {/* 🔄 ローディング表示 */}
       {loading && <p className="text-gray-500">記事を取得しています...</p>}
@@ -62,7 +62,7 @@ export default function BlogPage() {
                   </CardHeader>
                   <CardContent className="p-0 pt-3">
                     <CardDescription className="text-xs">
-                      <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+                      <small>{new Date(post.publishedAt).toLocaleDateString()}</small>
                     </CardDescription>
                   </CardContent>
                   <CardFooter className="p-0 pt-1">

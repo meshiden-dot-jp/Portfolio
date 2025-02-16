@@ -37,7 +37,7 @@ export default function BlogPage() {
   return (
     <div className="sm:w-[70%] w-[90%] m-auto">
       <a href="/news">
-        <h3>News</h3>
+        <h1>News</h1>
       </a>
 
       {/* 🔄 ローディング表示 */}
@@ -61,8 +61,8 @@ export default function BlogPage() {
                   <TableCell className="align-text-top">
                     {new Date(post.publishedAt).toLocaleDateString()}
                   </TableCell>
-                  <TableCell className="text-[10px] align-text-top min-w-32 font-bold text-center">
-                    <p className="bg-gray-100 text-gray-500">{post.tag}</p>
+                  <TableCell className="align-text-top min-w-32 font-medium text-center">
+                    <p className="text-[10px] bg-gray-100 text-gray-500">{post.tag}</p>
                   </TableCell>
                   <TableCell>
                     <Link href={post.link} className="hover:underline">

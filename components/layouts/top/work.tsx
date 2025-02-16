@@ -33,7 +33,7 @@ export default function BlogPage() {
   return (
     <div className="sm:w-[70%] w-[90%] m-auto">
       <a href="/work">
-        <h3>Work</h3>
+        <h1>Work</h1>
       </a>
 
       {/* 🔄 ローディング表示 */}
@@ -68,7 +68,7 @@ export default function BlogPage() {
                     </CardHeader>
                     <CardContent className="p-0 pt-3">
                       <CardDescription className="text-xs">
-                        <p>{new Date(post.publishedAt).toLocaleDateString()}</p>
+                        <small>{new Date(post.publishedAt).toLocaleDateString()}</small>
                       </CardDescription>
                     </CardContent>
                     <CardFooter className="p-0 pt-1">

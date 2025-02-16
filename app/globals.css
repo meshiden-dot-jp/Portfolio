@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  fontsize: 16px;
+}
+
 body {
   font-family: "A-OTF UD Shin Go NT Pr6N", Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -14,30 +18,70 @@ h1,h2,h3,h4,h5,h6{
   font-style: normal;
 }
 
+h1{
+  padding-top:64px;
+  font-size: 2.027rem;
+  padding-bottom:24px;
+}
+
+h2{
+  padding-top:64px;
+  font-size: 1.802rem;
+  padding-bottom:24px;
+}
+
 h3{
-  font-size: 42px;
-  margin-top:96px;
-  margin-bottom: 24px;
+  padding-top:40px;
+  font-size: 1.602rem;
+  padding-bottom:24px;
 }
 
 h4{
-  font-size: 32px;
-  padding-top:96px;
-  padding-bottom: 24px;
+  padding-top:40px;
+  font-size: 1.424rem;
+  padding-bottom:16px;
 }
 
 h5{
-  font-size: 28px;
-  padding-top:96px;
-  padding-bottom: 24px;
+  padding-top:40px;
+  font-size: 1.138rem;
+  padding-bottom:16px;
 }
 
-h6{
-  font-size: 20px;
-  padding-top:48px;
-  padding-bottom: 24px;
+blockquote {
+  border-left: 4px solid #d1d5db; /* 左側のグレーの線 */
+  padding: 16px 24px;
+  margin: 16px 0;
+  background: #f9fafb; /* 背景色（オプション） */
+  color: #374151; /* 文字色 */
+  font-style: italic;
 }
 
+small{
+  font-size:0.75rem;
+}y
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  overflow: hidden;
+  background-color: white;
+  margin: 16px 0;
+}
+
+td{
+  padding: 1rem;
+  color: #0a0a0a;
+}
+
+tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:last-child{
+  border:none;
+}
 
 /* figure{
   width:90%;

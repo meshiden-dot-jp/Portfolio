@@ -58,18 +58,20 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
 
   return (
     <div className="sm:w-[50%] w-[90%] m-auto pt-12 pb-32">
-      <Image
-        src={blog.header_image.url}
-        alt={blog.title}
-        width={900}
-        height={900}
-        className="object-cover"
-      />
-      <h3>{blog.title}</h3>
-      <p>{new Date(blog.publishedAt).toLocaleDateString()}</p>
-      <div dangerouslySetInnerHTML={{ __html: blog.body }} />
-      <a href="/blog">
-        <Button>一覧に戻る</Button>
+      <div className="pb-16">
+        <Image
+          src={blog.header_image.url}
+          alt={blog.title}
+          width={900}
+          height={900}
+          className="object-cover"
+        />
+        <h1>{blog.title}</h1>
+        <p>{new Date(blog.publishedAt).toLocaleDateString()}</p>
+        <div dangerouslySetInnerHTML={{ __html: blog.body }} />
+      </div>
+      <a className="flex justify-center w-full" href="/blog">
+        <Button className="sm:w-1/3 w-full">一覧に戻る</Button>
       </a>
     </div>
   );

@@ -21,7 +21,7 @@ const ContactPage = () => {
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-12">
-      <h3>Contact</h3>
+      <h1>Contact</h1>
       <p className="pb-12">
         本ページに関するお問い合わせは、以下のフォームにご記入ください。
         このフォームに入力された個人情報は、お問い合わせ内容の回答のみに使用されます。

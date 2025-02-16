@@ -16,11 +16,11 @@ const header = () => {
         <div className='sticky top-0 w-full border-b-[1px] bg-white z-10'>
             <div className='h-16 w-[90%] m-auto flex justify-between items-center'>
                 <a className='flex' href="/">
-                    <h1 className='text-4xl leading-[48px] pr-4'>iIDa</h1>
-                    <h2>
+                    <p className='text-4xl leading-[48px] pr-4 font-[din-2014] font-bold'>iIDa</p>
+                    <p className='font-[din-2014] font-bold'>
                         Frontend Engineer <br />
                         UI Designer
-                    </h2>
+                    </p>
                 </a>
 
                 <div className='sm:hidden flex'>

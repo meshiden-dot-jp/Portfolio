@@ -5,11 +5,11 @@ const footer = () => {
         <div className='border-t-[1px] pt-6'>
             <div className='h-auto pb-6 w-[90%] sm:flex sm:justify-between m-auto'>
                 <a className='flex' href="/">
-                    <h1 className='text-4xl leading-[48px] pr-4'>iIDa</h1>
-                    <h2>
+                    <p className='text-4xl leading-[48px] pr-4 font-[din-2014] font-bold'>iIDa</p>
+                    <p className='font-[din-2014] font-bold'>
                         Frontend Engineer <br />
                         UI Designer
-                    </h2>
+                    </p>
                 </a>
 
                 <ul className='grid grid-cols-1 sm:gap-3 gap-2 sm:pt-0 pt-8 sm:text-right font-[din-2014] font-bold text-xl'>

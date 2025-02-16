@@ -33,7 +33,7 @@ export default function BlogPage() {
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-32">
-      <h3>News</h3>
+      <h1>News</h1>
 
       {/* 🔄 ローディング表示 */}
       {loading && <p className="text-gray-500">記事を取得しています...</p>}
@@ -53,7 +53,11 @@ export default function BlogPage() {
             {blog.map((post) => (
               <TableRow key={post.id}>
                 <TableCell className="align-text-top">{new Date(post.publishedAt).toLocaleDateString()}</TableCell>
-                <TableCell className="text-[10px] align-text-top min-w-32 font-bold text-center"><p className="bg-gray-100 text-gray-500">{post.tag}</p></TableCell>
+                <TableCell className="text-[10px] align-text-top min-w-32 font-medium text-center">
+                  <p className="text-[10px] bg-gray-100 text-gray-500">
+                    {post.tag}
+                  </p>
+                </TableCell>
                 <TableCell>
                   <Link href={post.link} className="hover:underline">
                     {post.title}
