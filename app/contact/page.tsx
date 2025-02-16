@@ -88,6 +88,7 @@ const ContactPage = () => {
           </div>
 
           <div className="flex justify-center">
+            <Input type="hidden" name="recaptchaResponse" id="recaptchaResponse"/>
             <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
           </div>
         </div>

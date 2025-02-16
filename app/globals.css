@@ -59,7 +59,12 @@ blockquote {
 
 small{
   font-size:0.75rem;
-}y
+}
+
+figcaption{
+  font-size:0.75rem;
+  color:#374151;
+}
 
 table{
   width: 100%;
