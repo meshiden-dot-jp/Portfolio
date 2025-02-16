@@ -12,7 +12,7 @@ const footer = () => {
                     </p>
                 </a>
 
-                <ul className='grid grid-cols-1 sm:gap-3 gap-2 sm:pt-0 pt-8 sm:text-right font-[din-2014] font-bold text-xl'>
+                <ul className='grid grid-cols-1 sm:gap-3 gap-2 sm:pt-0 pt-8 sm:text-right font-[din-2014] font-bold text-xl list-none'>
                     <li><a href="/work">Work</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/news">News</a></li>

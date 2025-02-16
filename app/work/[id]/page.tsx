@@ -3,6 +3,7 @@ import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 // ブログの詳細データを取得する関数
 async function getBlogData(id: string | undefined): Promise<Blog | null> {
@@ -47,15 +48,15 @@ export async function generateStaticParams() {
 export default async function BlogDetail({ params }: { params?: { id?: string } }) {
 
   if (!params || !params.id) {
-    return <p>記事が見つかりません。</p>;
-  }
-
-  const blog = await getBlogData(params.id);
-
-  if (!blog) {
-    return <p>記事が見つかりません。</p>;
-  }
-
+      notFound();
+    }
+  
+    const blog = await getBlogData(params.id);
+  
+    if (!blog) {
+      notFound();
+    }
+  
   return (
     <div className="sm:w-[50%] w-[90%] m-auto pt-12 pb-32">
       <div className="pb-16">
@@ -70,7 +71,7 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
         <p>{new Date(blog.publishedAt).toLocaleDateString()}</p>
         <div dangerouslySetInnerHTML={{ __html: blog.body }} />
       </div>
-      <a className="flex justify-center w-full" href="/blog">
+      <a className="flex justify-center w-full" href="/work">
         <Button className="sm:w-1/3 w-full">一覧に戻る</Button>
       </a>
     </div>

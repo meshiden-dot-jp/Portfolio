@@ -57,13 +57,15 @@ export default function BlogPage() {
                   <Card className="p-0 border-none shadow-none">
                     <CardHeader className="p-0">
                       {post.header_image?.url && (
-                        <Image
+                        <div className="overflow-hidden">
+                          <Image
                           src={post.header_image.url}
                           alt={post.title}
                           width={1600}
                           height={900}
-                          className="object-cover"
+                          className="object-cover transition-transform duration-300 ease-in-out sm:hover:scale-105"
                         />
+                        </div>
                       )}
                     </CardHeader>
                     <CardContent className="p-0 pt-3">

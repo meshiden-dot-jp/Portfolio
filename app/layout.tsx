@@ -6,7 +6,7 @@ import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
-import Breadcrumb from "@/components/layouts/breadcrumb";
+import BreadcrumbWrapper from "@/components/layouts/breadcrumbwrapper"; // ← ここを変更！
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,18 +40,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  const gaId = process.env.GA_ID || '';
+  const gaId = process.env.GA_ID || "";
 
   return (
     <html lang="ja">
       <head>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
         {children}
-        <Breadcrumb/>
+        <BreadcrumbWrapper /> {/* ← Client Component を挿入 */}
         <Footer />
         <Lowernav />
         <Copyright />

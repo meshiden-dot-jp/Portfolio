@@ -18,34 +18,18 @@ h1,h2,h3,h4,h5,h6{
   font-style: normal;
 }
 
-h1{
-  padding-top:64px;
-  font-size: 2.027rem;
-  padding-bottom:24px;
-}
+h1{padding-top:40px; font-size: 1.476rem; padding-bottom:16px;}
+h2{padding-top:40px; font-size: 1.383rem; padding-bottom:16px;}
+h3{padding-top:24px; font-size: 1.296rem; padding-bottom:16px;}
+h4{padding-top:24px; font-size: 1.215rem; padding-bottom:12px;}
+h5{padding-top:24px; font-size: 1.138rem; padding-bottom:12px;}
 
-h2{
-  padding-top:64px;
-  font-size: 1.802rem;
-  padding-bottom:24px;
-}
-
-h3{
-  padding-top:40px;
-  font-size: 1.602rem;
-  padding-bottom:24px;
-}
-
-h4{
-  padding-top:40px;
-  font-size: 1.424rem;
-  padding-bottom:16px;
-}
-
-h5{
-  padding-top:40px;
-  font-size: 1.138rem;
-  padding-bottom:16px;
+@media (min-width: 640px) {
+  h1{padding-top:64px; font-size: 2.027rem; padding-bottom:24px;}
+  h2{padding-top:64px; font-size: 1.802rem; padding-bottom:24px;}
+  h3{padding-top:40px; font-size: 1.602rem; padding-bottom:24px;}
+  h4{padding-top:40px; font-size: 1.424rem; padding-bottom:16px;}
+  h5{padding-top:40px; font-size: 1.138rem; padding-bottom:16px;}  
 }
 
 blockquote {
@@ -64,12 +48,14 @@ small{
 figcaption{
   font-size:0.75rem;
   color:#374151;
+  line-height:3rem;
+  text-align:center;
 }
 
 table{
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 0.875rem;
   overflow: hidden;
   background-color: white;
   margin: 16px 0;
@@ -78,6 +64,7 @@ table{
 td{
   padding: 1rem;
   color: #0a0a0a;
+  vertical-align: text-top;
 }
 
 tr {
@@ -96,6 +83,8 @@ tr:last-child{
 label{
   padding:10px 0;
 }
+
+
 
 @layer utilities {
   .text-balance {

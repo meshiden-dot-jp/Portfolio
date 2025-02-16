@@ -3,6 +3,7 @@ import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 // ブログの詳細データを取得する関数
 async function getBlogData(id: string | undefined): Promise<Blog | null> {
@@ -47,13 +48,13 @@ export async function generateStaticParams() {
 export default async function BlogDetail({ params }: { params?: { id?: string } }) {
 
   if (!params || !params.id) {
-    return <p>記事が見つかりません。</p>;
+    notFound();
   }
 
   const blog = await getBlogData(params.id);
 
   if (!blog) {
-    return <p>記事が見つかりません。</p>;
+    notFound();
   }
 
   return (

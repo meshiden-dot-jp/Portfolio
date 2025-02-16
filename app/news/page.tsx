@@ -4,17 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table"
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 export default function BlogPage() {
   const [blog, setBlog] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState(true); // ローディング状態を追加
-  const [error, setError] = useState(false); // エラー状態を追加
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchBlogs() {
@@ -23,9 +18,9 @@ export default function BlogPage() {
         setBlog(data.contents || []);
       } catch (error) {
         console.error("Error fetching microCMS data:", error);
-        setError(true); // エラーが発生したら `error` を `true` に設定
+        setError(true);
       } finally {
-        setLoading(false); // ローディングを終了
+        setLoading(false);
       }
     }
     fetchBlogs();
@@ -51,15 +46,17 @@ export default function BlogPage() {
         <Table>
           <TableBody>
             {blog.map((post) => (
-              <TableRow key={post.id}>
-                <TableCell className="align-text-top">{new Date(post.publishedAt).toLocaleDateString()}</TableCell>
-                <TableCell className="text-[10px] align-text-top min-w-32 font-medium text-center">
-                  <p className="text-[10px] bg-gray-100 text-gray-500">
+              <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
+                <TableCell className="w-1/4 sm:w-auto align-text-top">
+                  {new Date(post.publishedAt).toLocaleDateString()}
+                </TableCell>
+                <TableCell className="w-1/3 sm:w-auto text-[10px] align-text-top font-medium text-center min-w-32">
+                  <p className="text-[10px] bg-gray-100 text-gray-500 px-2">
                     {post.tag}
                   </p>
                 </TableCell>
-                <TableCell>
-                  <Link href={post.link} className="hover:underline">
+                <TableCell className="w-full sm:w-auto align-text-top pt-0">
+                  <Link href={post.link} className="hover:underline block sm:inline">
                     {post.title}
                   </Link>
                 </TableCell>
@@ -68,8 +65,6 @@ export default function BlogPage() {
           </TableBody>
         </Table>
       )}
-
-
     </div>
   );
 }

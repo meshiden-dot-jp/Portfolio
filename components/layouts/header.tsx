@@ -1,4 +1,5 @@
 import React from 'react'
+import Lowernav from './lowernav'
 
 import {
     Sheet,
@@ -30,13 +31,16 @@ const header = () => {
                             <SheetHeader>
                                 <SheetTitle></SheetTitle>
                                 <SheetDescription>
-                                    <ul className='text-2xl text-black grid grid-cols-1 gap-8 pt-16 text-center font-[din-2014] font-bold'>
+                                    <ul className='text-3xl text-black grid grid-cols-1 gap-4 pl-8 text-left font-[din-2014] font-bold'>
                                         <li><a href="/work">Work</a></li>
                                         <li><a href="/profile">Profile</a></li>
                                         <li><a href="/news">News</a></li>
                                         <li><a href="/blog">Tech Blog</a></li>
                                         <li><a href="/contact">Contact</a></li>
                                     </ul>
+                                    <div className='text-left pt-16 pl-4'>
+                                        <Lowernav/>
+                                    </div>
                                 </SheetDescription>
                             </SheetHeader>
                         </SheetContent>

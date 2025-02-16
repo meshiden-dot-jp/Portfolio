@@ -54,25 +54,27 @@ export default function BlogPage() {
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
         <>
-          <Table>
-            <TableBody>
-              {blog.map((post) => (
-                <TableRow key={post.id}>
-                  <TableCell className="align-text-top">
-                    {new Date(post.publishedAt).toLocaleDateString()}
-                  </TableCell>
-                  <TableCell className="align-text-top min-w-32 font-medium text-center">
-                    <p className="text-[10px] bg-gray-100 text-gray-500">{post.tag}</p>
-                  </TableCell>
-                  <TableCell>
-                    <Link href={post.link} className="hover:underline">
-                      {post.title}
-                    </Link>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+        <Table>
+          <TableBody>
+            {blog.map((post) => (
+              <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
+                <TableCell className="w-1/4 sm:w-auto align-text-top">
+                  {new Date(post.publishedAt).toLocaleDateString()}
+                </TableCell>
+                <TableCell className="w-1/3 sm:w-auto text-[10px] align-text-top font-medium text-center min-w-32">
+                  <p className="text-[10px] bg-gray-100 text-gray-500 px-2">
+                    {post.tag}
+                  </p>
+                </TableCell>
+                <TableCell className="w-full sm:w-auto align-text-top pt-0">
+                  <Link href={post.link} className="hover:underline block sm:inline">
+                    {post.title}
+                  </Link>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
 
           {/* ✅ 記事が6つ以上あるときのみ表示 */}
           {hasMore && (
