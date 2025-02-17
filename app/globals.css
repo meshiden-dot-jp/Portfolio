@@ -13,7 +13,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6{
-  font-family: din-2014, ryo-gothic-plusn, sans-serif;
+  font-family: din-2014, var(--font-noto-sans-jp), sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -58,7 +58,6 @@ table{
   font-size: 0.875rem;
   overflow: hidden;
   background-color: white;
-  margin: 16px 0;
 }
 
 td{

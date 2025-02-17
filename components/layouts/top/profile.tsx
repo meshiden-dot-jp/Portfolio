@@ -1,5 +1,8 @@
+"use client"
+
 import React from 'react'
-import Image from "next/image";
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 
 const profile = () => {
   return (
@@ -7,8 +10,28 @@ const profile = () => {
       <a href="/profile">
         <h1>Profile</h1>
       </a>
-      <Image className='hidden sm:block' src="https://placehold.jp/1600x900.png" alt="サンプル画像" width={1600} height={900} />
-      <Image className='block sm:hidden' src="https://placehold.jp/900x1600.png" alt="サンプル画像" width={900} height={1600} />
+      <div className='sm:flex items-center gap-12'>
+        <Image
+        className='sm:w-1/3'
+        src='https://res.cloudinary.com/dxsccj7j7/image/upload/v1739324050/icon.png'
+        width='900'
+        height='900'
+        alt=''
+        />
+        <div>
+          <p className='text-2xl font-medium leading-[56px]'>
+            はじめまして。<br />
+            UIデザインとフロントエンドエンジニアをしています。<br />
+            <span className='text-[#D356FD] bg-[#f8e4ff] px-3 rounded-[8px] font-[din-2014] font-bold text-4xl mr-2'>"Accessibility for All."</span>を目標に、<br />
+            誰でも使いやすい設計を目指しています。
+          </p>
+          <div className='flex justify-end'>
+            <a href="/profile">
+              <Button variant="ghost">詳しく見る<i className="fa-solid fa-chevron-right"></i></Button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
