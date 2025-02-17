@@ -6,16 +6,6 @@ import Image from "next/image";
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
-
 
 export default function BlogPage() {
   const [blog, setBlog] = useState<Blog[]>([]);

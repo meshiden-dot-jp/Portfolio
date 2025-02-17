@@ -22,7 +22,7 @@ const profile = () => {
           <p className='text-2xl font-medium leading-[56px]'>
             はじめまして。<br />
             UIデザインとフロントエンドエンジニアをしています。<br />
-            <span className='text-[#D356FD] bg-[#f8e4ff] px-3 rounded-[8px] font-[din-2014] font-bold text-4xl mr-2'>"Accessibility for All."</span>を目標に、<br />
+            <span className='text-[#D356FD] bg-[#f8e4ff] px-3 rounded-[8px] font-[din-2014] font-bold text-4xl mr-2'>&quot;Accessibility for All.&quot;</span>を目標に、<br />
             誰でも使いやすい設計を目指しています。
           </p>
           <div className='flex justify-end'>
