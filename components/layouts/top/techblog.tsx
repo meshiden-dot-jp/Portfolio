@@ -7,6 +7,8 @@ import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge"
+
 
 export default function BlogPage() {
   const [blog, setBlog] = useState<Blog[]>([]);
@@ -57,14 +59,14 @@ export default function BlogPage() {
                   <Card className="p-0 border-none shadow-none">
                     <CardHeader className="p-0">
                       {post.header_image?.url && (
-                        <div className="overflow-hidden">
+                        <div className="overflow-hidden  rounded-[16px]">
                           <Image
-                          src={post.header_image.url}
-                          alt={post.title}
-                          width={1600}
-                          height={900}
-                          className="object-cover transition-transform duration-300 ease-in-out sm:hover:scale-105"
-                        />
+                            src={post.header_image.url}
+                            alt={post.title}
+                            width={1600}
+                            height={900}
+                            className="object-cover transition-transform duration-300 ease-in-out sm:hover:scale-105"
+                          />
                         </div>
                       )}
                     </CardHeader>

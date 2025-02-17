@@ -51,7 +51,7 @@ export default function BlogPage() {
                 <Card className="p-0 border-none shadow-none">
                   <CardHeader className="p-0">
                     {post.header_image?.url && (
-                      <div className="overflow-hidden">
+                      <div className="overflow-hidden  rounded-[16px]">
                         <Image
                         src={post.header_image.url}
                         alt={post.title}

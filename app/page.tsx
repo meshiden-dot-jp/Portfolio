@@ -12,7 +12,7 @@ export default function Home() {
       <main className="w-[90%] h-[calc(100vh-60px)] m-auto">
         <div className="sm:flex">
           <Image
-            className="sm:w-[70%] sm:absolute right-20 bottom-20"
+            className="sm:w-[70%] sm:absolute right-20 bottom-20 rounded-[32px]"
             src="https://res.cloudinary.com/dxsccj7j7/image/upload/v1739765100/AdobeStock_675897162_f0zmy9.jpg"
             alt=""
             width="1600"

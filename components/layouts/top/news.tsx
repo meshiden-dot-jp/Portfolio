@@ -54,15 +54,15 @@ export default function BlogPage() {
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
         <>
-        <Table>
+        <Table className="rounded-[16px]">
           <TableBody>
             {blog.map((post) => (
               <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
                 <TableCell className="w-1/4 sm:w-auto align-text-top">
                   {new Date(post.publishedAt).toLocaleDateString()}
                 </TableCell>
-                <TableCell className="w-1/3 sm:w-auto text-[10px] align-text-top font-medium text-center min-w-32">
-                  <p className="text-[10px] bg-gray-100 text-gray-500 px-2">
+                <TableCell className="w-1/3 sm:w-1/12 text-[10px] align-text-top font-medium text-center min-w-32">
+                  <p className="text-[10px] bg-gray-100 text-gray-500 px-2 rounded-[4px]">
                     {post.tag}
                   </p>
                 </TableCell>
