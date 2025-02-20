@@ -10,28 +10,29 @@ const profile = () => {
       <a href="/profile">
         <h1>Profile</h1>
       </a>
-      <div className='sm:flex items-center gap-12 bg-white rounded-[16px]'>
+      <div className='lg:flex items-center gap-16 bg-white rounded-[16px]'>
         <Image
-        className='sm:w-1/3 rounded-[64px]'
-        src='https://res.cloudinary.com/dxsccj7j7/image/upload/v1739324050/icon.png'
-        width='900'
-        height='900'
-        alt=''
+          className='lg:w-1/3 lg:m-0 m-auto w-full'
+          src='https://placehold.jp/900x900.png'
+          width='900'
+          height='900'
+          alt=''
         />
-        <div>
-          <p className='text-2xl font-bold leading-[56px] text-zinc-700'>
+        <div className='lg:pt-0 pt-4'>
+          <p className='lg:text-2xl text-base font-bold lg:leading-[56px] leading-7 lg:text-left'>
             はじめまして。<br />
-            UIデザインとフロントエンドエンジニアをしています。<br />
-            <span className='text-[#D356FD] bg-[#f8e4ff] px-3 rounded-[8px] font-[din-2014] font-bold text-4xl mr-2'>&quot;Accessibility for All.&quot;</span>を目標に、<br />
-            誰でも使いやすい設計を目指しています。
+            UIデザインとフロントエンド構築をしています。<br />
+            <span className='bg-black text-white px-3 font-[din-2014] font-bold mr-2'>&quot;Accessibility for All.&quot;</span>を目標に、<br />
+            誰もが使いやすいUI設計を目指しています。
           </p>
-          <div className='flex justify-end'>
+          <div className='flex justify-end pt-8'>
             <a href="/profile">
-              <Button variant="ghost">詳しく見る<i className="fa-solid fa-chevron-right"></i></Button>
+              <Button variant="default" size={'lg'}>詳しく見る<i className="fa-solid fa-chevron-right"></i></Button>
             </a>
           </div>
         </div>
       </div>
+
     </div>
   )
 }

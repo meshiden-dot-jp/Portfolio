@@ -36,10 +36,10 @@ const ContactPage = () => {
         <div className="pb-4">
           <div className="pb-6">
             <label htmlFor="field-name">名前・会社名
-              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
+              <span className="nes">必須</span>
             </label>
             <Input
-              className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
+              className="mt-2 h-[56px] rounded-[8px] border-[1px]"
               name="entry.1130227589"
               type="text"
               id="field-name"
@@ -50,10 +50,10 @@ const ContactPage = () => {
 
           <div className="pb-6">
             <label htmlFor="field-email">メールアドレス
-              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
+              <span className="nes">必須</span>
             </label>
             <Input
-              className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
+              className="mt-2 h-[56px] rounded-[8px] border-[1px]"
               name="entry.213641340"
               type="email"
               id="field-email"
@@ -65,7 +65,7 @@ const ContactPage = () => {
           <div className="pb-6">
             <label htmlFor="field-tel">電話番号</label>
             <Input
-              className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
+              className="mt-2 h-[56px] rounded-[8px] border-[1px]"
               name="entry.1399266169"
               type="tel"
               id="field-tel"
@@ -75,11 +75,11 @@ const ContactPage = () => {
 
           <div className="pb-12">
             <label htmlFor="field-message">お問い合わせ内容
-              <span className="ml-2 text-[10px] bg-slate-950 text-white px-[8px] py-[4px] rounded-sm">必須</span>
+              <span className="nes">必須</span>
             </label>
             <Textarea
               field-sizing-content="true"
-              className="mt-2 h-[56px] rounded-[8px] border-black border-[1px]"
+              className="mt-2 h-[56px] rounded-[8px] border-[1px]"
               name="entry.1450192857"
               id="field-message"
               placeholder="お問い合わせ内容"

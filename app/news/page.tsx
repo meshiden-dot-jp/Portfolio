@@ -47,10 +47,10 @@ export default function BlogPage() {
           <TableBody>
             {blog.map((post) => (
               <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
-                <TableCell className="w-1/4 sm:w-auto align-text-top">
+                <TableCell className="w-1/4 sm:w-1/12 align-text-top">
                   {new Date(post.publishedAt).toLocaleDateString()}
                 </TableCell>
-                <TableCell className="w-1/3 sm:w-auto text-[10px] align-text-top font-medium text-center min-w-32">
+                <TableCell className="w-1/4 sm:w-1/12 text-[10px] align-text-top font-medium text-center min-w-32">
                   <p className="text-[10px] bg-gray-100 text-gray-500 px-2">
                     {post.tag}
                   </p>

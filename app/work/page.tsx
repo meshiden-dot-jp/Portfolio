@@ -44,20 +44,20 @@ export default function BlogPage() {
 
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
-        <ul className="grid sm:grid-cols-3 grid-cols-1 gap-16">
+        <ul className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[5%]">
           {blog.map((post) => (
             <li key={post.id}>
               <Link href={`/work/${post.id}`}>
                 <Card className="p-0 border-none shadow-none">
                   <CardHeader className="p-0">
                     {post.header_image?.url && (
-                      <div className="overflow-hidden  rounded-[16px]">
+                      <div className="overflow-hidden">
                         <Image
                         src={post.header_image.url}
                         alt={post.title}
                         width={900}
                         height={900}
-                        className="object-cover transition-transform duration-300 ease-in-out sm:hover:scale-105"
+                        className="object-cover transition-transform duration-300 ease-in-out lg:hover:scale-105"
                       />
                       </div>
                     )}

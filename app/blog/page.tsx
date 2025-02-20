@@ -44,7 +44,7 @@ export default function BlogPage() {
 
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
-        <ul className="grid sm:grid-cols-3 grid-cols-1 gap-16">
+        <ul className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[5%]">
           {blog.map((post) => (
             <li key={post.id}>
               <Link href={`/blog/${post.id}`}>
@@ -57,7 +57,7 @@ export default function BlogPage() {
                         alt={post.title}
                         width={900}
                         height={900}
-                        className="object-cover transition-transform duration-300 ease-in-out sm:hover:scale-105"
+                        className="object-cover transition-transform duration-300 ease-in-out lg:hover:scale-105"
                       />
                       </div>
                     )}

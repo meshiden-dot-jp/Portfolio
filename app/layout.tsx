@@ -7,7 +7,7 @@ import Footer from "@/components/layouts/footer";
 import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
-import BreadcrumbWrapper from "@/components/layouts/breadcrumbwrapper"; // ← Client Component を挿入
+import BreadcrumbWrapper from "@/components/layouts/breadcrumbwrapper";
 
 // ✅ Noto Sans JP を読み込む（ウエイトも指定可能）
 const notoSansJP = Noto_Sans_JP({
