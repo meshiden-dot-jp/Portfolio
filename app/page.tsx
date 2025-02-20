@@ -7,7 +7,7 @@ import Contact from "@/components/layouts/top/contact";
 export default function Home() {
   return (
     <div>
-      <main className="w-[90%] h-[calc(100vh-60px)] m-auto">
+      <main className="w-[90%] h-[calc(100vh-60px)] m-auto min-h-screen">
 
       </main>
       <Work />

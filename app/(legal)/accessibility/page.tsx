@@ -7,7 +7,7 @@ const page = () => {
             <p>当サイトは、すべてのユーザーが快適にウェブサイトを利用できるよう、ウェブアクセシビリティの向上に努めています。</p>
 
             <h4>アクセシビリティ対応の取り組み</h4>
-            <ul>
+            <ul className='pt-4 pl-8 list-disc'>
                 <li>適切なコントラスト比を確保し、視認性を向上</li>
                 <li>スクリーンリーダー対応のための適切なHTML構造を維持</li>
                 <li>キーボード操作によるナビゲーションの最適化</li>
@@ -16,14 +16,13 @@ const page = () => {
             </ul>
 
             <h4>アクセシビリティ基準の準拠</h4>
-            <p>当サイトは、<a href="https://www.w3.org/TR/WCAG/" target="_blank" rel="noopener noreferrer">WCAG (Web Content Accessibility Guidelines)</a> に準拠することを目標としています。</p>
+            <p>当サイトは、<a className='border-b-[1.5px] border-black' href="https://www.w3.org/TR/WCAG/" target="_blank" rel="noopener noreferrer">WCAG (Web Content Accessibility Guidelines)</a> に準拠することを目標としています。</p>
 
             <h4>今後の取り組み</h4>
             <p>ユーザーの皆様からのフィードバックをもとに、引き続きウェブアクセシビリティの改善に取り組んでまいります。</p>
 
             <h4>お問い合わせ</h4>
-            <p>当サイトのアクセシビリティに関するご意見・ご質問は、以下の連絡先までお寄せください。</p>
-            <p>お問い合わせ窓口:support@example.com</p>
+            <p>当サイトのアクセシビリティに関するご意見・ご質問は、当サイト内の<a className='border-b-[1.5px] border-black' href='/contact'>お問い合わせフォーム</a>までお願いいたします。</p>
         </div>
     )
 }

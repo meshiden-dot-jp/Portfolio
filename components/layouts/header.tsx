@@ -24,7 +24,7 @@ const header = () => {
                     </p>
                 </a>
 
-                <div className='sm:hidden flex'>
+                <div className='lg:hidden flex'>
                     <Sheet>
                         <SheetTrigger><i className="fa-solid fa-bars"></i></SheetTrigger>
                         <SheetContent className='w-screen'>
@@ -47,7 +47,7 @@ const header = () => {
                     </Sheet>
                 </div>
 
-                <ul className='gap-6 font-[din-2014] font-bold sm:flex hidden text-xl'>
+                <ul className='gap-6 font-[din-2014] font-bold lg:flex hidden text-xl'>
                     <li><a href="/work">Work</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/news">News</a></li>

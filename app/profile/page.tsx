@@ -6,7 +6,7 @@ import Award from '@/components/layouts/profile/award';
 
 const page = () => {
   return (
-    <div className='sm:w-[70%] w-[90%] m-auto sm:flex'>
+    <div className='sm:w-[70%] w-[90%] m-auto sm:flex min-h-screen'>
       <div className='sm:w-1/3 relative'>
         <div className='sm:sticky top-20 sm:pb-32 '>
           <h1>Profile</h1>

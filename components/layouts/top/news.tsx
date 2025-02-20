@@ -35,8 +35,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="bg-white pb-[48px]">
-      <div className="sm:w-[70%] w-[90%] m-auto">
+    <div className="sm:w-[70%] w-[90%] m-auto">
       <a href="/news">
         <h1>News</h1>
       </a>
@@ -55,27 +54,27 @@ export default function BlogPage() {
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
         <>
-        <Table>
-          <TableBody>
-            {blog.map((post) => (
-              <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
-                <TableCell className="w-1/4 sm:w-1/12 align-text-top">
-                  {new Date(post.publishedAt).toLocaleDateString()}
-                </TableCell>
-                <TableCell className="w-1/4 sm:w-1/12 text-[10px] align-text-top font-medium text-center min-w-32">
-                  <p className="text-[10px] bg-gray-100 text-gray-500 px-2">
-                    {post.tag}
-                  </p>
-                </TableCell>
-                <TableCell className="w-full sm:w-auto align-text-top pt-0">
-                  <Link href={post.link} className="hover:underline block sm:inline">
-                    {post.title}
-                  </Link>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+          <Table>
+            <TableBody>
+              {blog.map((post) => (
+                <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
+                  <TableCell className="w-1/4 sm:w-1/12 align-text-top">
+                    {new Date(post.publishedAt).toLocaleDateString()}
+                  </TableCell>
+                  <TableCell className="w-1/4 sm:w-1/12 text-[10px] align-text-top font-medium text-center min-w-32">
+                    <p className="text-[10px] bg-gray-100 text-gray-500 px-2">
+                      {post.tag}
+                    </p>
+                  </TableCell>
+                  <TableCell className="w-full sm:w-auto align-text-top pt-0">
+                    <Link href={post.link} className="hover:underline block sm:inline">
+                      {post.title}
+                    </Link>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
 
           {/* ✅ 記事が6つ以上あるときのみ表示 */}
           {hasMore && (
@@ -89,7 +88,6 @@ export default function BlogPage() {
           )}
         </>
       )}
-    </div>
     </div>
   );
 }

@@ -58,7 +58,7 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
   }
 
   return (
-    <div className="lg:w-[50%] sm:w-[70%] w-[90%] m-auto pt-12 pb-32">
+    <div className="lg:w-[50%] sm:w-[70%] w-[90%] m-auto pt-12 pb-32 min-h-screen">
       <div className="pb-16">
         <Image
           src={blog.header_image.url}

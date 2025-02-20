@@ -8,7 +8,7 @@ const ThanksPage = () => {
   const router = useRouter();
 
   return (
-    <div className="sm:w-[70%] w-[90%] m-auto text-center py-40">
+    <div className="sm:w-[70%] w-[90%] m-auto text-center py-40 min-h-screen">
       <h1 className="text-2xl font-bold mb-8">お問い合わせありがとうございました</h1>
       <p className="mb-16">
         お問い合わせを受け付けました。  
