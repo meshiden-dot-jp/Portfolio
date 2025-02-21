@@ -1,23 +1,55 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const ContactPage = () => {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
-  useEffect(() => {
-    const iframe = document.getElementById("hidden_iframe") as HTMLIFrameElement;
-    if (iframe) {
-      iframe.onload = () => {
-        if (submitted) {
-          window.location.href = "/thanks";
-        }
-      };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("送信中...");
+
+    if (!executeRecaptcha) {
+      console.error("reCAPTCHA not loaded");
+      setStatus("reCAPTCHAの読み込みに失敗しました。");
+      return;
     }
-  }, [submitted]);
+
+    try {
+      // reCAPTCHA 認証
+      const token = await executeRecaptcha("contact_form");
+      setRecaptchaToken(token);
+      // 1秒遅延させて Google フォームに送信
+      setTimeout(() => {
+        const form = document.getElementById("contact-form") as HTMLFormElement;
+        if (form) {
+          form.submit();
+        }
+        setStatus("送信完了しました！");
+        setSubmitted(true);
+
+        setTimeout(() => {
+          router.push("/");
+        }, 1500);
+      }, 1000);
+    } catch (error) {
+      console.error("reCAPTCHA error:", error);
+      setStatus("エラーが発生しました。再試行してください。");
+    }
+  };
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-12 bg-white">
@@ -27,10 +59,11 @@ const ContactPage = () => {
         このフォームに入力された個人情報は、お問い合わせ内容の回答のみに使用されます。
       </p>
       <form
+        id="contact-form"
         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXjov6LEg5wA6uvZRpzURut9OZFU0Q8ZGM9LXwl2zorSaXag/formResponse"
         method="POST"
         target="hidden_iframe"
-        onSubmit={() => setSubmitted(true)} // useState を使用
+        onSubmit={handleSubmit}
         className="c-form"
       >
         <div className="pb-4">
@@ -45,6 +78,8 @@ const ContactPage = () => {
               id="field-name"
               placeholder="山田太郎"
               required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
 
@@ -59,6 +94,8 @@ const ContactPage = () => {
               id="field-email"
               placeholder="info@example.com"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
 
@@ -70,6 +107,8 @@ const ContactPage = () => {
               type="tel"
               id="field-tel"
               placeholder="000-0000-0000"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
 
@@ -84,16 +123,19 @@ const ContactPage = () => {
               id="field-message"
               placeholder="お問い合わせ内容"
               required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
 
           <div className="flex justify-center">
-            <Input type="hidden" name="recaptchaResponse" id="recaptchaResponse"/>
             <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
           </div>
         </div>
       </form>
-      
+
+      {status && <p className="mt-4 text-center text-sm">{status}</p>}
+
       <iframe
         name="hidden_iframe"
         id="hidden_iframe"
