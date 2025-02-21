@@ -1,28 +1,33 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { toast } from "sonner"
+import { useEffect } from "react";
 
 const ContactPage = () => {
-  const router = useRouter();
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (sessionStorage.getItem("toastSuccess")) {
+      toast.success("送信が完了しました。");
+      sessionStorage.removeItem("toastSuccess"); // 1回表示したら削除
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("送信中...");
 
     if (!executeRecaptcha) {
       console.error("reCAPTCHA not loaded");
-      setStatus("reCAPTCHAの読み込みに失敗しました。");
+      toast.error("reCAPTCHAの読み込みに失敗しました。");
       return;
     }
 
@@ -33,15 +38,17 @@ const ContactPage = () => {
         if (form) {
           form.submit();
         }
-        setStatus("送信完了しました！");
+
+        sessionStorage.setItem("toastSuccess", "true");
 
         setTimeout(() => {
-          router.push("/");
+          window.location.reload()
         }, 1500);
+        
       }, 1000);
     } catch (error) {
       console.error("reCAPTCHA error:", error);
-      setStatus("エラーが発生しました。再試行してください。");
+      toast.error("エラーが発生しました。再試行してください。");
     }
   };
 

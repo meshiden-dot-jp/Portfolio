@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP } from "next/font/google"; // Google Fonts の Noto Sans JP を追加
+import { Noto_Sans_JP } from "next/font/google";
+import { Toaster } from "sonner";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layouts/header";
@@ -60,6 +61,7 @@ export default function RootLayout({
       </head>
       <body className={`${notoSansJP.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
+        <Toaster position="top-right" />
         {children}
         <BreadcrumbWrapper /> {/* ← Client Component を挿入 */}
         <Footer />
