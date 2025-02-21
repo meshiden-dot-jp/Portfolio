@@ -51,7 +51,9 @@ const ContactPage = () => {
       <p className="pb-12">
         本ページに関するお問い合わせは、以下のフォームにご記入ください。
         このフォームに入力された個人情報は、お問い合わせ内容の回答のみに使用されます。
+        このフォームでパスワードを送信しないでください。
       </p>
+
       <form
         id="contact-form"
         action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeXjov6LEg5wA6uvZRpzURut9OZFU0Q8ZGM9LXwl2zorSaXag/formResponse"
@@ -62,7 +64,7 @@ const ContactPage = () => {
       >
         <div className="pb-4">
           <div className="pb-6">
-            <label htmlFor="field-name">名前・会社名
+            <label htmlFor="field-name">氏名・組織名
               <span className="nes">必須</span>
             </label>
             <Input
@@ -121,14 +123,21 @@ const ContactPage = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-
           <div className="flex justify-center">
             <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
           </div>
+          <p className="pt-12 text-xs text-center text-gray-500 leading-8 break-keep">このフォームはreCAPTCHAによって保護されており、Googleの
+            <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/privacy/">プライバシーポリシー</a>と
+            <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/terms/">利用規約</a>が適用されます。
+          </p>
+          <p className="text-xs text-center text-gray-500 leading-8 break-keep">「送信する」ボタンを押すと、当サイトの
+            <a className='border-b-[1.5px] border-gray-500' href="/privacypolicy">プライバシーポリシー</a>と
+            <a className='border-b-[1.5px] border-gray-500' href="/disclaimer">免責事項</a>に同意したことになります。
+          </p>
         </div>
       </form>
 
-      {status && <p className="mt-4 text-center text-sm">{status}</p>}
+
 
       <iframe
         name="hidden_iframe"

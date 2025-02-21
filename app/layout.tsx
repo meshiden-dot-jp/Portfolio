@@ -8,7 +8,6 @@ import Lowernav from "@/components/layouts/lowernav";
 import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
 import BreadcrumbWrapper from "@/components/layouts/breadcrumbwrapper";
-import ClientLayout from "./ClientLayout"; // クライアントコンポーネントを読み込む
 
 
 // ✅ Noto Sans JP を読み込む（ウエイトも指定可能）
@@ -61,7 +60,7 @@ export default function RootLayout({
       </head>
       <body className={`${notoSansJP.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
-        <ClientLayout>{children}</ClientLayout>
+        {children}
         <BreadcrumbWrapper /> {/* ← Client Component を挿入 */}
         <Footer />
         <Lowernav />
