@@ -9,14 +9,12 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const ContactPage = () => {
   const router = useRouter();
-  const [submitted, setSubmitted] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<string | null>(null);
-  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,9 +27,6 @@ const ContactPage = () => {
     }
 
     try {
-      // reCAPTCHA 認証
-      const token = await executeRecaptcha("contact_form");
-      setRecaptchaToken(token);
       // 1秒遅延させて Google フォームに送信
       setTimeout(() => {
         const form = document.getElementById("contact-form") as HTMLFormElement;
@@ -39,7 +34,6 @@ const ContactPage = () => {
           form.submit();
         }
         setStatus("送信完了しました！");
-        setSubmitted(true);
 
         setTimeout(() => {
           router.push("/");

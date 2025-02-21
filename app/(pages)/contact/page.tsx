@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Contact from "@/components/layouts/top/contact";
 
 const ContactPage = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted] = useState(false);
 
   useEffect(() => {
     const iframe = document.getElementById("hidden_iframe") as HTMLIFrameElement;

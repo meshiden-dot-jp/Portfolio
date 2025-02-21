@@ -51,7 +51,7 @@ const BreadcrumbComponent = () => {
                 }
             }
         });
-    }, [pathname]);
+    }, [pathSegments]);
 
     return (
         <div className="w-[90%] flex m-auto pb-6">

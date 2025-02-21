@@ -1,6 +1,5 @@
 import React from 'react'
 import Lowernav from './lowernav'
-import Icons from './icons'
 
 import {
     Sheet,
