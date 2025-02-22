@@ -3,8 +3,6 @@ import {
   Table,
   TableBody,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table"
 
@@ -32,12 +30,6 @@ const award = () => {
   return (
     <div>
       <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-1/6 font-bold text-black">YEAR</TableHead>
-            <TableHead className="font-bold text-black">AWARD</TableHead>
-          </TableRow>
-        </TableHeader>
         <TableBody>
           {invoices.map((invoice) => (
             <TableRow key={invoice.year}>

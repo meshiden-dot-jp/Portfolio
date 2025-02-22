@@ -31,11 +31,11 @@ label{
   font-style: normal;
 }
 
-h1{padding-top:40px; font-size: 1.476rem; padding-bottom:16px;}
-h2{padding-top:40px; font-size: 1.383rem; padding-bottom:16px;}
-h3{padding-top:24px; font-size: 1.296rem; padding-bottom:16px;}
-h4{padding-top:24px; font-size: 1.215rem; padding-bottom:12px;}
-h5{padding-top:24px; font-size: 1.138rem; padding-bottom:12px;}
+h1{padding-top:48px; font-size: 1.476rem; padding-bottom:16px;}
+h2{padding-top:48px; font-size: 1.383rem; padding-bottom:16px;}
+h3{padding-top:32px; font-size: 1.296rem; padding-bottom:16px;}
+h4{padding-top:32px; font-size: 1.215rem; padding-bottom:12px;}
+h5{padding-top:32px; font-size: 1.138rem; padding-bottom:12px;}
 
 @media (min-width: 640px) {
   h1{padding-top:64px; font-size: 2.027rem; padding-bottom:24px;}

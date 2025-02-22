@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react'
 import Biography from '@/components/layouts/profile/biography';
 import Award from '@/components/layouts/profile/award';
+import Skills from '@/components/layouts/profile/skills'
 
 const page = () => {
   return (
@@ -21,10 +22,10 @@ const page = () => {
       </div>
       <div className='sm:pl-16 sm:pt-64 pb-24 sm:w-2/3'>
         <div className='pt-8'>
-          <p className='text-4xl font-[din-2014] font-bold'>
+          {/* <p className='text-4xl font-[din-2014] font-bold'>
             Frontend Engineer <br />
             UI Designer
-          </p>
+          </p> */}
           <p className='text-9xl pb-8 font-[din-2014] font-bold'>iIDa</p>
           <p className='lg:text-xl text-base font-bold lg:leading-8 leading-7 lg:text-left'>
             はじめまして。<br />
@@ -34,6 +35,7 @@ const page = () => {
           </p>
         </div>
         <h2>Skills</h2>
+        <Skills/>
 
         <h2>Biography</h2>
         <Biography />

@@ -7,9 +7,7 @@ import Image from 'next/image';
 const profile = () => {
   return (
     <div className='sm:w-[70%] w-[90%] m-auto'>
-      <a href="/profile">
-        <h1>Profile</h1>
-      </a>
+      <h1>Profile</h1>
       <div className='lg:flex items-center gap-16 bg-white rounded-[16px]'>
         <Image
           className='lg:w-1/3 lg:m-0 m-auto w-full'

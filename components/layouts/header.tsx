@@ -14,14 +14,14 @@ import {
 
 const header = () => {
     return (
-        <div className='sticky top-0 w-full border-b-[1px] bg-white z-50'>
-            <div className='h-16 w-[90%] m-auto flex justify-between items-center'>
+        <div className='sticky top-0 w-full z-50 text-black bg-white/80 backdrop-saturate-[180%] backdrop-blur-xl'>
+            <div className='lg:h-14 h-12 w-[90%] m-auto flex justify-between items-center'>
                 <a className='flex' href="/">
-                    <p className='text-4xl leading-[48px] pr-4 font-[din-2014] font-bold'>iIDa</p>
-                    <p className='font-[din-2014] font-bold'>
+                    <p className='lg:text-3xl text-2xl leading-[48px] pr-4 font-[din-2014] font-bold'>iIDa</p>
+                    {/* <p className='font-[din-2014] font-bold'>
                         Frontend Engineer <br />
                         UI Designer
-                    </p>
+                    </p> */}
                 </a>
 
                 <div className='lg:hidden flex'>
@@ -47,7 +47,7 @@ const header = () => {
                     </Sheet>
                 </div>
 
-                <ul className='gap-6 font-[din-2014] font-bold lg:flex hidden text-xl'>
+                <ul className='gap-6 font-[din-2014] font-semibold lg:flex hidden text-lg'>
                     <li><a href="/work">Work</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/news">News</a></li>
