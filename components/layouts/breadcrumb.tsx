@@ -54,7 +54,7 @@ const BreadcrumbComponent = () => {
     }, [pathSegments]);
 
     return (
-        <div className="w-[90%] flex m-auto pb-6">
+        <div className="w-[90%] flex m-auto pb-6 no-print">
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem>

@@ -3,7 +3,7 @@ import Icons from './icons'
 
 const footer = () => {
     return (
-        <div className='border-t-[1px] pt-6'>
+        <div className='border-t-[1px] pt-6 no-print'>
             <div className='h-auto pb-6 w-[90%] sm:flex sm:justify-between m-auto'>
                 <div>
                     {/* <a className='flex' href="/">
