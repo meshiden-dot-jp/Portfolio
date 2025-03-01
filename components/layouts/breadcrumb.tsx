@@ -21,8 +21,8 @@ const pathTitleMap: { [key: string]: string } = {
     contact: "お問い合わせ",
     thanks:"送信完了",
     disclaimer: "免責事項",
-    privacypolicy: "プライバシーポリシー",
-    aipolicy: "AIポリシー",
+    privacy: "プライバシーポリシー",
+    ai: "AIポリシー",
     accessibility: "ウェブアクセシビリティ",
 };
 

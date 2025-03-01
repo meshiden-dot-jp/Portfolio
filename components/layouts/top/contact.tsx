@@ -138,7 +138,7 @@ const ContactPage = () => {
             <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/terms/">利用規約</a>が適用されます。
           </p>
           <p className="pt-4 text-xs text-center text-gray-500 leading-5">「送信する」ボタンを押すと、当サイトの
-            <a className='border-b-[1.5px] border-gray-500' href="/privacypolicy">プライバシーポリシー</a>と
+            <a className='border-b-[1.5px] border-gray-500' href="/privacy">プライバシーポリシー</a>と
             <a className='border-b-[1.5px] border-gray-500' href="/disclaimer">免責事項</a>に同意したことになります。
           </p>
         </div>

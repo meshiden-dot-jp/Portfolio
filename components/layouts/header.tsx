@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import React from 'react'
 import Lowernav from './lowernav'
 
@@ -12,7 +15,18 @@ import {
 
 
 
-const header = () => {
+const Header = () => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 5);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (!isVisible) return null;
     return (
         <div className='sticky top-0 w-full z-50 text-black bg-white/80 backdrop-saturate-[180%] backdrop-blur-xl no-print'>
             <div className='lg:h-14 h-12 w-[90%] m-auto flex justify-between items-center'>
@@ -39,7 +53,7 @@ const header = () => {
                                         <li><a href="/contact">Contact</a></li>
                                     </ul>
                                     <div className='text-left pt-16 pl-4'>
-                                        <Lowernav/>
+                                        <Lowernav />
                                     </div>
                                 </SheetDescription>
                             </SheetHeader>
@@ -59,4 +73,4 @@ const header = () => {
     )
 }
 
-export default header
+export default Header
