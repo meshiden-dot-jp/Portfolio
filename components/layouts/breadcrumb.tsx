@@ -14,7 +14,7 @@ import {
 
 // パスのマッピング（スラッグを適切なタイトルに変更）
 const pathTitleMap: { [key: string]: string } = {
-    work: "作品",
+    work: "作品一覧",
     profile: "自己紹介",
     news: "お知らせ",
     blog: "技術ブログ",

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { Toaster } from "sonner";
-import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
@@ -16,19 +15,6 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   weight: ["400", "700"], // 標準(400) と 太字(700) を使用
   variable: "--font-noto-sans-jp",
-  display: "swap",
-});
-
-// ✅ 他のフォント（Geist Sans & Geist Mono）
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  display: "swap",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -59,7 +45,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css" />
       </head>
-      <body className={`${notoSansJP.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${notoSansJP.variable} antialiased`}>
         <Header />
         <Toaster position="top-right" />
         {children}

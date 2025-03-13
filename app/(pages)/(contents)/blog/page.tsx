@@ -29,7 +29,7 @@ export default function BlogPage() {
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-32">
-      <h1>Tech Blog</h1>
+      <h1>技術ブログ</h1>
 
       {/* 🔄 ローディング表示 */}
       {loading && <p className="text-gray-500">記事を取得しています...</p>}

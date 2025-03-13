@@ -24,6 +24,7 @@ const invoices = [
 const biography = () => {
   return (
     <div>
+      <h2>技術</h2>
       <Table>
         <TableBody>
           {invoices.map((invoice) => (

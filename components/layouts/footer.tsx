@@ -16,12 +16,12 @@ const footer = () => {
                     <Icons />
                 </div>
 
-                <ul className='grid grid-cols-1 sm:gap-3 gap-2 sm:pt-0 pt-8 sm:text-right font-[din-2014] font-bold text-lg'>
-                    <li><a href="/work">Work</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/news">News</a></li>
-                    <li><a href="/blog">Tech Blog</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                <ul className='grid grid-cols-1 sm:gap-3 gap-2 sm:pt-0 pt-8 sm:text-right font-[Noto Sans JP] font-bold text-sm'>
+                    <li><a href="/work">作品一覧</a></li>
+                    <li><a href="/profile">プロフィール</a></li>
+                    <li><a href="/news">お知らせ</a></li>
+                    <li><a href="/blog">技術ブログ</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
                 </ul>
             </div>
         </div>

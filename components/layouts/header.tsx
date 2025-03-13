@@ -45,12 +45,12 @@ const Header = () => {
                             <SheetHeader>
                                 <SheetTitle></SheetTitle>
                                 <SheetDescription>
-                                    <ul className='text-3xl text-black grid grid-cols-1 gap-4 pl-8 text-left font-[din-2014] font-bold'>
-                                        <li><a href="/work">Work</a></li>
-                                        <li><a href="/profile">Profile</a></li>
-                                        <li><a href="/news">News</a></li>
-                                        <li><a href="/blog">Tech Blog</a></li>
-                                        <li><a href="/contact">Contact</a></li>
+                                    <ul className='text-xl text-black font-bold grid grid-cols-1 gap-4 pl-8 text-left'>
+                                        <li><a href="/work">作品一覧</a></li>
+                                        <li><a href="/profile">自己紹介</a></li>
+                                        <li><a href="/news">お知らせ</a></li>
+                                        <li><a href="/blog">技術ブログ</a></li>
+                                        <li><a href="/contact">お問い合わせ</a></li>
                                     </ul>
                                     <div className='text-left pt-16 pl-4'>
                                         <Lowernav />
@@ -61,12 +61,12 @@ const Header = () => {
                     </Sheet>
                 </div>
 
-                <ul className='gap-6 font-[din-2014] font-semibold lg:flex hidden text-lg'>
-                    <li><a href="/work">Work</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/news">News</a></li>
-                    <li><a href="/blog">Tech Blog</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                <ul className='gap-8 font-bold lg:flex hidden text-sm'>
+                    <li><a href="/work">作品一覧</a></li>
+                    <li><a href="/profile">自己紹介</a></li>
+                    <li><a href="/news">お知らせ</a></li>
+                    <li><a href="/blog">技術ブログ</a></li>
+                    <li><a href="/contact">お問い合わせ</a></li>
                 </ul>
             </div>
         </div>

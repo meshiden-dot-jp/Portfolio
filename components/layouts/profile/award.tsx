@@ -29,6 +29,7 @@ const invoices = [
 const award = () => {
   return (
     <div>
+      <h2>受賞歴</h2>
       <Table>
         <TableBody>
           {invoices.map((invoice) => (
