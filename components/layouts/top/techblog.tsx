@@ -7,6 +7,8 @@ import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Skeleton from "../sk_card";
+import { toast } from "sonner"
 
 
 export default function BlogPage() {
@@ -18,28 +20,42 @@ export default function BlogPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
+        const startTime = Date.now(); // ✅ 開始時間を記録
+
         const data = await client.get({ endpoint: "tech-blog", queries: { limit: 7 } }); // ✅ limitを7に変更
-        setBlog(data.contents.slice(0, 6) || []); // ✅ 6記事のみ表示
-        setHasMore(data.contents.length > 6); // ✅ 記事が6つ以上あるか判定
+        setBlog(data.contents.slice(0, 6) || []);
+        setHasMore(data.contents.length > 6);
+
+        const elapsedTime = Date.now() - startTime; // ✅ データ取得にかかった時間を計算
+        const delay = Math.max(2000 - elapsedTime, 0); // ✅ 2秒未満なら残りの時間を待機
+
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
       } catch (error) {
         console.error("Error fetching microCMS data:", error);
         setError(true);
-      } finally {
-        setLoading(false);
+        setLoading(false); // エラー時はすぐに終了
       }
     }
     fetchBlogs();
   }, []);
+
+  useEffect(() => {
+    if (error) {
+      toast.error("技術ブログが読み込めませんでした。再試行してください。");
+    }
+  }, [error]);
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto">
       <h1>技術ブログ</h1>
 
       {/* 🔄 ローディング表示 */}
-      {loading && <p className="text-gray-500">記事を取得しています...</p>}
+      {loading && <Skeleton />}
 
       {/* ⚠ エラー表示 */}
-      {error && <p className="text-red-500">記事の取得に失敗しました。</p>}
+      {error && <Skeleton />}
 
       {/* ❌ 記事がない場合の表示 */}
       {!loading && !error && blog.length === 0 && (
@@ -49,7 +65,7 @@ export default function BlogPage() {
       {/* ✅ 記事がある場合の表示 */}
       {!loading && !error && blog.length > 0 && (
         <>
-          <ul className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[5%]">
+          <ul className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-[1vw] sm:gap-[1.5vw] gap-[5vw]">
             {blog.map((post) => (
               <li key={post.id}>
                 <Link href={`/blog/${post.id}`}>

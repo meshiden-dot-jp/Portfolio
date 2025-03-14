@@ -5,6 +5,8 @@ import Link from "next/link";
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { toast } from "sonner"
+import Skeleton from "@/components/layouts/sk_bar";
 
 export default function BlogPage() {
   const [blog, setBlog] = useState<Blog[]>([]);
@@ -26,15 +28,21 @@ export default function BlogPage() {
     fetchBlogs();
   }, []);
 
+  useEffect(() => {
+    if (error) {
+      toast.error("お知らせが読み込めませんでした。再試行してください。");
+    }
+  }, [error]);
+
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-32">
       <h1>お知らせ</h1>
 
       {/* 🔄 ローディング表示 */}
-      {loading && <p className="text-gray-500">記事を取得しています...</p>}
+      {loading && <Skeleton/>}
 
       {/* ⚠ エラー表示 */}
-      {error && <p className="text-red-500">記事の取得に失敗しました。</p>}
+      {error && <Skeleton/>}
 
       {/* ❌ 記事がない場合の表示 */}
       {!loading && !error && blog.length === 0 && (
