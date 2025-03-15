@@ -6,8 +6,8 @@ import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
 import Skeleton from "../sk_bar";
-import { toast } from "sonner"
-import {
+import Zero from "@/components/layouts/zero";
+import Error from "@/components/layouts/error"; import {
   Table,
   TableBody,
   TableCell,
@@ -23,38 +23,44 @@ export default function BlogPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
+        const startTime = Date.now();
         const data = await client.get({ endpoint: "news", queries: { limit: 7 } }); // ✅ limitを7に変更
         setBlog(data.contents.slice(0, 6) || []); // ✅ 6記事のみ表示
         setHasMore(data.contents.length > 6); // ✅ 記事が6つ以上あるか判定
+        const elapsedTime = Date.now() - startTime; // ✅ データ取得にかかった時間を計算
+        const delay = Math.max(1000 - elapsedTime, 0); // ✅ 2秒未満なら残りの時間を待機
+
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
       } catch (error) {
         console.error("Error fetching microCMS data:", error);
         setError(true);
-      } finally {
-        setLoading(false);
+        setLoading(false); // エラー時はすぐに終了
       }
     }
     fetchBlogs();
   }, []);
-
-  useEffect(() => {
-    if (error) {
-      toast.error("お知らせが読み込めませんでした。再試行してください。");
-    }
-  }, [error]);
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto">
       <h1>お知らせ</h1>
 
       {/* 🔄 ローディング表示 */}
-      {loading && <Skeleton/>}
+      {loading && <Skeleton />}
 
       {/* ⚠ エラー表示 */}
-      {error && <Skeleton/>}
+      {error && (
+        <div>
+          <Error />
+        </div>
+      )}
 
       {/* ❌ 記事がない場合の表示 */}
       {!loading && !error && blog.length === 0 && (
-        <p className="text-gray-500">記事がありません。</p>
+        <div>
+          <Zero />
+        </div>
       )}
 
       {/* ✅ 記事がある場合の表示 */}

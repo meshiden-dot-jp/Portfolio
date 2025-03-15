@@ -5,8 +5,9 @@ import Link from "next/link";
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import { toast } from "sonner"
-import Skeleton from "@/components/layouts/sk_bar";
+import Zero from "@/components/layouts/zero";
+import Error from "@/components/layouts/error"; import Skeleton from "@/components/layouts/sk_bar";
+import { Button } from "@/components/ui/button";
 
 export default function BlogPage() {
   const [blog, setBlog] = useState<Blog[]>([]);
@@ -16,37 +17,53 @@ export default function BlogPage() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
+        const startTime = Date.now();
         const data = await client.get({ endpoint: "news", queries: { limit: 100 } });
         setBlog(data.contents || []);
+        const elapsedTime = Date.now() - startTime; // ✅ データ取得にかかった時間を計算
+        const delay = Math.max(1000 - elapsedTime, 0); // ✅ 2秒未満なら残りの時間を待機
+
+        setTimeout(() => {
+          setLoading(false);
+        }, delay);
       } catch (error) {
         console.error("Error fetching microCMS data:", error);
         setError(true);
-      } finally {
-        setLoading(false);
+        setLoading(false); // エラー時はすぐに終了
       }
     }
     fetchBlogs();
   }, []);
-
-  useEffect(() => {
-    if (error) {
-      toast.error("お知らせが読み込めませんでした。再試行してください。");
-    }
-  }, [error]);
 
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-32">
       <h1>お知らせ</h1>
 
       {/* 🔄 ローディング表示 */}
-      {loading && <Skeleton/>}
+      {loading && <Skeleton />}
 
       {/* ⚠ エラー表示 */}
-      {error && <Skeleton/>}
+      {error && (
+        <div>
+          <Error />
+          <div className="flex justify-center">
+            <Button asChild className=''>
+              <Link className="sm:w-1/4 w-full" href="/">ホームへ戻る</Link>
+            </Button>
+          </div>
+        </div>
+      )}
 
       {/* ❌ 記事がない場合の表示 */}
       {!loading && !error && blog.length === 0 && (
-        <p className="text-gray-500">記事がありません。</p>
+        <div>
+          <Zero />
+          <div className="flex justify-center">
+            <Button asChild className=''>
+              <Link className="sm:w-1/4 w-full" href="/">ホームへ戻る</Link>
+            </Button>
+          </div>
+        </div>
       )}
 
       {/* ✅ 記事がある場合の表示 */}

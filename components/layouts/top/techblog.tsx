@@ -8,7 +8,8 @@ import { Blog } from "@/app/types/blog";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Skeleton from "../sk_card";
-import { toast } from "sonner"
+import Zero from "@/components/layouts/zero";
+import Error from "@/components/layouts/error";
 
 
 export default function BlogPage() {
@@ -27,7 +28,7 @@ export default function BlogPage() {
         setHasMore(data.contents.length > 6);
 
         const elapsedTime = Date.now() - startTime; // ✅ データ取得にかかった時間を計算
-        const delay = Math.max(2000 - elapsedTime, 0); // ✅ 2秒未満なら残りの時間を待機
+        const delay = Math.max(1000 - elapsedTime, 0); // ✅ 2秒未満なら残りの時間を待機
 
         setTimeout(() => {
           setLoading(false);
@@ -41,12 +42,6 @@ export default function BlogPage() {
     fetchBlogs();
   }, []);
 
-  useEffect(() => {
-    if (error) {
-      toast.error("技術ブログが読み込めませんでした。再試行してください。");
-    }
-  }, [error]);
-
   return (
     <div className="sm:w-[70%] w-[90%] m-auto">
       <h1>技術ブログ</h1>
@@ -55,11 +50,17 @@ export default function BlogPage() {
       {loading && <Skeleton />}
 
       {/* ⚠ エラー表示 */}
-      {error && <Skeleton />}
+      {error && (
+        <div>
+          <Error />
+        </div>
+      )}
 
       {/* ❌ 記事がない場合の表示 */}
       {!loading && !error && blog.length === 0 && (
-        <p className="text-gray-500">記事がありません。</p>
+        <div>
+          <Zero />
+        </div>
       )}
 
       {/* ✅ 記事がある場合の表示 */}
