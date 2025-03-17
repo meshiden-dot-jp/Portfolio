@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { client } from "@/lib/client";
 import { Noto_Sans_JP } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
@@ -17,47 +18,71 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
-// ✅ OGP画像のデフォルトURL
-const ogpImageUrl = "https://meshiden.jp/ogp-default.jpg";
+// ✅ デフォルトOGP画像
+const defaultOGP = "https://meshiden.jp/ogp-default.jpg";
 
-// ✅ メタデータ設定（OGP & Twitter）
-export const metadata: Metadata = {
-  title: "iIDa ポートフォリオサイト",
-  description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
-  openGraph: {
-    title: "iIDa ポートフォリオサイト",
-    description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
-    url: "https://meshiden.jp",
-    images: [{ url: ogpImageUrl }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "iIDa ポートフォリオサイト",
-    description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
-    images: [ogpImageUrl],
-  },
-};
+// ✅ メタデータを動的に生成
+export async function generateMetadata(
+  { params }: { params: { id?: string } }
+): Promise<Metadata> {
+  const baseUrl = "https://meshiden.jp";
+  let ogImage = defaultOGP;
+  let title = "iIDa ポートフォリオサイト";
+  let description = "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。";
+  let url = baseUrl;
+
+  // ✅ `/blog/[id]` または `/work/[id]` の場合はヘッダー画像を OGP に設定
+  if (params?.id) {
+    try {
+      const isBlog = process.env.NEXT_PUBLIC_PAGE_TYPE === "blog";
+      const endpoint = isBlog ? "tech-blog" : "work";
+
+      const data = await client.get({
+        endpoint,
+        contentId: params.id,
+      });
+
+      title = data.title || title;
+      description = data.description || description;
+      ogImage = data.header_image?.url || ogImage;
+      url = `${baseUrl}/${isBlog ? "blog" : "work"}/${params.id}`; // 記事ごとの URL
+    } catch (error) {
+      console.error(`OGP取得エラー:`, error);
+    }
+  }
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [{ url: ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
+  };
+}
 
 // ✅ ルートレイアウトコンポーネント
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || ""; // GA4の環境変数を適切に取得
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || "";
 
   return (
     <html lang="ja">
       <head>
-        {/* Adobe Fonts 読み込み */}
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css" />
       </head>
       <body className={`${notoSansJP.variable} antialiased`}>
-        {/* ヘッダー */}
         <Header />
         <Toaster position="top-right" />
-        
-        {/* メインコンテンツ */}
         {children}
         <BreadcrumbWrapper />
-
-        {/* フッター */}
         <Footer />
         <Lowernav />
         <Copyright />
