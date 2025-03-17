@@ -9,15 +9,18 @@ import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
 import BreadcrumbWrapper from "@/components/layouts/breadcrumbwrapper";
 
-
-// ✅ Noto Sans JP を読み込む（ウエイトも指定可能）
+// ✅ フォント設定（Noto Sans JP）
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["400", "700"], // 標準(400) と 太字(700) を使用
+  weight: ["400", "700"],
   variable: "--font-noto-sans-jp",
   display: "swap",
 });
 
+// ✅ OGP画像のデフォルトURL
+const ogpImageUrl = "https://meshiden.jp/ogp-default.jpg";
+
+// ✅ メタデータ設定（OGP & Twitter）
 export const metadata: Metadata = {
   title: "iIDa ポートフォリオサイト",
   description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
@@ -25,39 +28,44 @@ export const metadata: Metadata = {
     title: "iIDa ポートフォリオサイト",
     description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
     url: "https://meshiden.jp",
-    images: [{ url: "https://yourdomain.com/image.png" }],
+    images: [{ url: ogpImageUrl }],
   },
   twitter: {
     card: "summary_large_image",
     title: "iIDa ポートフォリオサイト",
     description: "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。",
-    images: ["https://yourdomain.com/image.png"],
+    images: [ogpImageUrl],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  const gaId = process.env.GA_ID || "";
+// ✅ ルートレイアウトコンポーネント
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID || ""; // GA4の環境変数を適切に取得
 
   return (
     <html lang="ja">
       <head>
+        {/* Adobe Fonts 読み込み */}
         <link rel="stylesheet" href="https://use.typekit.net/rvs7vvb.css" />
       </head>
       <body className={`${notoSansJP.variable} antialiased`}>
+        {/* ヘッダー */}
         <Header />
         <Toaster position="top-right" />
+        
+        {/* メインコンテンツ */}
         {children}
-        <BreadcrumbWrapper /> {/* ← Client Component を挿入 */}
+        <BreadcrumbWrapper />
+
+        {/* フッター */}
         <Footer />
         <Lowernav />
         <Copyright />
 
-        {/* FontAwesome のスクリプト */}
+        {/* ✅ FontAwesome のスクリプト */}
         <Script src="https://kit.fontawesome.com/4e6b2556d7.js" strategy="afterInteractive" />
 
-        {/* Google Analytics のスクリプト（GA_IDがある場合のみ） */}
+        {/* ✅ Google Analytics（GA_IDがある場合のみ） */}
         {gaId && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
@@ -72,7 +80,7 @@ export default function RootLayout({
           </>
         )}
 
-        {/* Google reCAPTCHA のスクリプト */}
+        {/* ✅ Google reCAPTCHA のスクリプト */}
         <Script src="https://www.google.com/recaptcha/api.js" strategy="afterInteractive" />
       </body>
     </html>
