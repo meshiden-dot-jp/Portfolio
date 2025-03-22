@@ -31,21 +31,25 @@ export async function generateMetadata(
   let description = "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。";
   let url = baseUrl;
 
-  // ✅ `/blog/[id]` または `/work/[id]` の場合はヘッダー画像を OGP に設定
+  // `/blog/[id]` または `/work/[id]` の場合は個別データ取得
   if (params?.id) {
     try {
       const isBlog = process.env.NEXT_PUBLIC_PAGE_TYPE === "blog";
-      const endpoint = isBlog ? "tech-blog" : "work";
+      const isWork = process.env.NEXT_PUBLIC_PAGE_TYPE === "work";
 
-      const data = await client.get({
-        endpoint,
-        contentId: params.id,
-      });
+      const endpoint = isBlog ? "tech-blog" : isWork ? "work" : null;
 
-      title = data.title || title;
-      description = data.description || description;
-      ogImage = data.header_image?.url || ogImage;
-      url = `${baseUrl}/${isBlog ? "blog" : "work"}/${params.id}`; // 記事ごとの URL
+      if (endpoint) {
+        const data = await client.get({
+          endpoint,
+          contentId: params.id,
+        });
+
+        title = data.title || title;
+        description = data.description || description;
+        ogImage = data.header_image?.url || ogImage;
+        url = `${baseUrl}/${isBlog ? "blog" : "work"}/${params.id}`;
+      }
     } catch (error) {
       console.error(`OGP取得エラー:`, error);
     }
