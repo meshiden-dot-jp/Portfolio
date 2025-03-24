@@ -7,6 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { toast } from "sonner"
 import { useEffect } from "react";
+import { Separator } from "@/components/ui/separator"
+
 
 const ContactPage = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -55,11 +57,12 @@ const ContactPage = () => {
   return (
     <div className="sm:w-[70%] w-[90%] m-auto pb-12 bg-white">
       <h1>お問い合わせ</h1>
-      <p className="pb-12">
+      <p className="pb-8">
         本ページに関するお問い合わせは、以下のフォームにご記入ください。
         このフォームに入力された個人情報は、お問い合わせ内容の回答のみに使用されます。
-        このフォームでパスワードを送信しないでください。
       </p>
+      <Separator />
+      <p className="nes pt-4 pb-12">*必須の質問です。</p>
 
       <form
         id="contact-form"
@@ -72,7 +75,7 @@ const ContactPage = () => {
         <div className="pb-4">
           <div className="pb-6">
             <label htmlFor="field-name">氏名・組織名
-              <span className="nes">必須</span>
+              <span className="nes">*</span>
             </label>
             <Input
               className="mt-2 h-[56px] rounded-[8px] border-[1px]"
@@ -88,7 +91,7 @@ const ContactPage = () => {
 
           <div className="pb-6">
             <label htmlFor="field-email">メールアドレス
-              <span className="nes">必須</span>
+              <span className="nes">*</span>
             </label>
             <Input
               className="mt-2 h-[56px] rounded-[8px] border-[1px]"
@@ -103,7 +106,7 @@ const ContactPage = () => {
           </div>
 
           <div className="pb-6">
-            <label htmlFor="field-tel">電話番号</label>
+            <label htmlFor="field-tel">電話番号（任意）</label>
             <Input
               className="mt-2 h-[56px] rounded-[8px] border-[1px]"
               name="entry.1399266169"
@@ -117,7 +120,7 @@ const ContactPage = () => {
 
           <div className="pb-12">
             <label htmlFor="field-message">お問い合わせ内容
-              <span className="nes">必須</span>
+              <span className="nes">*</span>
             </label>
             <Textarea
               field-sizing-content="true"
@@ -133,11 +136,14 @@ const ContactPage = () => {
           <div className="flex justify-center">
             <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
           </div>
-          <p className="pt-12 text-xs text-center text-gray-500 leading-5">このフォームはreCAPTCHAによって保護されており、Googleの
+          <p className="pt-12 text-xs text-center text-gray-500 leading-5">
+          このフォームでパスワードを送信しないでください。
+          </p>
+          <p className="pt-2 text-xs text-center text-gray-500 leading-5">このフォームはreCAPTCHAによって保護されており、Googleの
             <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/privacy/">プライバシーポリシー</a>と
             <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/terms/">利用規約</a>が適用されます。
           </p>
-          <p className="pt-4 text-xs text-center text-gray-500 leading-5">「送信する」ボタンを押すと、当サイトの
+          <p className="pt-2 text-xs text-center text-gray-500 leading-5">送信することで、当サイトの
             <a className='border-b-[1.5px] border-gray-500' href="/privacy">プライバシーポリシー</a>と
             <a className='border-b-[1.5px] border-gray-500' href="/disclaimer">免責事項</a>に同意したことになります。
           </p>

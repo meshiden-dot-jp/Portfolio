@@ -105,14 +105,7 @@ tr:last-child{
 
 /* 必須ラベル */
 .nes{
-  background-color:black;
-  font-weight:400;
-  font-size: 10px;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-  padding:3px 12px;
-  margin-left:0.5rem;
-  border-radius: 9999px;
+  color:red;
 }
 
 /* コンタクトラベル */

@@ -5,7 +5,7 @@ const error = () => {
         <div>
             <div className="flex items-center justify-center gap-12 h-[50vh]">
                 <div className="text-center">
-                    <i className="fa-regular fa-circle-xmark text-5xl font-thin"></i>
+                    <i className="fa-solid fa-xmark text-5xl font-thin"></i>
                     <h2 className="pt-6">記事を読み込めませんでした</h2>
                     <p className="">
                         しばらくしてから、再度読み込んでください。<br />
