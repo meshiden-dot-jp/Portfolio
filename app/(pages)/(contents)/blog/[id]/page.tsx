@@ -4,6 +4,39 @@ import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const baseUrl = "https://meshiden.jp";
+  const defaultOGP = `${baseUrl}/ogp-default.jpg`;
+
+  try {
+    const data = await client.get({ endpoint: "tech-blog", contentId: params.id });
+
+    return {
+      title: data.title,
+      description: data.description || "iIDaの技術ブログ記事です。",
+      openGraph: {
+        title: data.title,
+        description: data.description,
+        url: `${baseUrl}/tech-blog/${params.id}`,
+        images: [{ url: data.header_image?.url || defaultOGP }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: data.title,
+        description: data.description,
+        images: [data.header_image?.url || defaultOGP],
+      },
+    };
+  } catch (error) {
+    console.error("OGPメタデータ取得エラー:", error);
+    return {
+      title: "記事が見つかりませんでした",
+      description: "指定された記事は存在しないか、読み込みに失敗しました。",
+    };
+  }
+}
 
 // ブログの詳細データを取得する関数
 async function getBlogData(id: string | undefined): Promise<Blog | null> {
