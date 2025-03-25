@@ -1,4 +1,3 @@
-// app/blog/[id]/page.tsx
 import { client } from "@/lib/client";
 import { Blog } from "@/app/types/blog";
 import { Button } from "@/components/ui/button";
@@ -90,11 +89,14 @@ export default async function BlogDetail({ params }: { params?: { id?: string } 
     notFound();
   }
 
+  // デフォルト画像のURL
+  const headerImageUrl = blog.header_image?.url || "/ogp-default.jpg";
+
   return (
     <div className="lg:w-[50%] sm:w-[70%] w-[90%] m-auto pt-12 pb-32 min-h-screen">
       <div className="pb-16">
         <Image
-          src={blog.header_image.url}
+          src={headerImageUrl}
           alt={blog.title}
           width={900}
           height={900}
