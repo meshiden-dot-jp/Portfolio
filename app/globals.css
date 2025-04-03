@@ -19,7 +19,13 @@
 }
 
 html{
-  fontsize: 16px;
+  fontsize: 10px;
+}
+
+@media (min-width: 640px) {
+  html{
+    fontsize: 16px;
+  }
 }
 
 body {
@@ -105,7 +111,7 @@ tr:last-child{
 
 /* 必須ラベル */
 .nes{
-  color:red;
+  color:black;
 }
 
 /* コンタクトラベル */

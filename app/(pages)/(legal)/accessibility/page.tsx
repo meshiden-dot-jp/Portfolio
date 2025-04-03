@@ -23,6 +23,8 @@ const page = () => {
 
             <h4>お問い合わせ</h4>
             <p>当サイトのアクセシビリティに関するご意見・ご質問は、当サイト内の<a className='border-b-[1.5px] border-black' href='/contact'>お問い合わせフォーム</a>までお願いいたします。</p>
+
+            <p className='flex justify-end pt-16'>最終更新日: 2025年2月7日</p>
         </div>
     )
 }

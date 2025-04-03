@@ -139,11 +139,11 @@ const ContactPage = () => {
           <p className="pt-12 text-xs text-center text-gray-500 leading-5">
           このフォームでパスワードを送信しないでください。
           </p>
-          <p className="pt-2 text-xs text-center text-gray-500 leading-5">このフォームはreCAPTCHAによって保護されており、Googleの
+          <p className="pt-2 text-xs text-center text-gray-500 leading-5">このフォームはreCAPTCHAによって保護されており、 Googleの
             <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/privacy/">プライバシーポリシー</a>と
             <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/terms/">利用規約</a>が適用されます。
           </p>
-          <p className="pt-2 text-xs text-center text-gray-500 leading-5">送信することで、当サイトの
+          <p className="pt-2 text-xs text-center text-gray-500 leading-5">送信することで、 当サイトの
             <a className='border-b-[1.5px] border-gray-500' href="/privacy">プライバシーポリシー</a>と
             <a className='border-b-[1.5px] border-gray-500' href="/disclaimer">免責事項</a>に同意したことになります。
           </p>

@@ -6,7 +6,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-const invoices = [
+const items = [
   {
     year: "2025",
     biography: (
@@ -45,10 +45,10 @@ const biography = () => {
       <h2>経歴</h2>
       <Table>
         <TableBody>
-          {invoices.map((invoice) => (
-            <TableRow key={invoice.year}>
-              <TableCell className="font-medium align-text-top">{invoice.year}</TableCell>
-              <TableCell className="">{invoice.biography}</TableCell>
+          {items.map((item) => (
+            <TableRow key={item.year}>
+              <TableCell className="w-[20%] font-medium align-text-top pl-2 sm:pl-4">{item.year}</TableCell>
+              <TableCell className="pr-2 sm:pr-4">{item.biography}</TableCell>
             </TableRow>
           ))}
         </TableBody>

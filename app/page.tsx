@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+// import Image from "next/image";
 import Work from "@/components/layouts/top/work";
 import Profile from "@/components/layouts/top/profile";
 import News from "@/components/layouts/top/news";
@@ -71,7 +72,7 @@ export default function Home() {
       {showContent && (
         <>
           <main className="w-[90%] h-[calc(100vh-60px)] m-auto min-h-screen">
-            {/* トップページのメインコンテンツ */}
+            {/* <Image src="/image/BG.JPG" alt="" fill className="object-cover"/> */}
           </main>
           <Work />
           <Profile />

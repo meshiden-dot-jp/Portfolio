@@ -5,8 +5,6 @@ import { Toaster } from "sonner";
 import "./globals.css";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
-import Lowernav from "@/components/layouts/lowernav";
-import Copyright from "@/components/layouts/copyright";
 import Script from "next/script";
 import BreadcrumbWrapper from "@/components/layouts/breadcrumbwrapper";
 
@@ -27,8 +25,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const baseUrl = "https://meshiden.jp";
   let ogImage = defaultOGP;
-  let title = "iIDa ポートフォリオサイト";
-  let description = "フロントエンドエンジニア兼UIデザイナー、iIDaのポートフォリオサイトです。";
+  let title = "IIDA｜ポートフォリオサイト";
+  let description = "フロントエンドエンジニア兼UIデザイナー、IIDAのポートフォリオサイトです。";
   let url = baseUrl;
 
   // `/blog/[id]` または `/work/[id]` の場合は個別データ取得
@@ -88,8 +86,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <BreadcrumbWrapper />
         <Footer />
-        <Lowernav />
-        <Copyright />
 
         {/* ✅ FontAwesome のスクリプト */}
         <Script src="https://kit.fontawesome.com/4e6b2556d7.js" strategy="afterInteractive" />

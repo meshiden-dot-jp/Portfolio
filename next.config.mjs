@@ -38,11 +38,11 @@ const nextConfig = {
       },
     ],
     domains: [
-      "images.microcms-assets.io", 
-      "res.cloudinary.com", 
-      "placehold.jp", 
-      "nextjs.org", 
-      "example.com", 
+      "images.microcms-assets.io",
+      "res.cloudinary.com",
+      "placehold.jp",
+      "nextjs.org",
+      "example.com",
       "use.typekit.net"
     ],
   },

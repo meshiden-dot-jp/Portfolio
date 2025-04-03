@@ -70,7 +70,7 @@ export default function BlogPage() {
             <TableBody>
               {blog.map((post) => (
                 <TableRow key={post.id} className="flex flex-wrap sm:table-row border-b">
-                  <TableCell className="w-1/4 sm:w-1/12 align-text-top">
+                  <TableCell className="w-1/4 sm:w-1/12 align-text-top  pl-2 sm:pl-4">
                     {new Date(post.publishedAt).toLocaleDateString()}
                   </TableCell>
                   <TableCell className="w-1/4 sm:w-1/12 text-[10px] align-text-top font-medium text-center min-w-32">
@@ -78,7 +78,7 @@ export default function BlogPage() {
                       {post.tag}
                     </p>
                   </TableCell>
-                  <TableCell className="w-full sm:w-auto align-text-top pt-0">
+                  <TableCell className="w-full sm:w-auto align-text-top pt-0 px-2 sm:px-4">
                     <Link href={post.link} className="hover:underline block sm:inline">
                       {post.title}
                     </Link>

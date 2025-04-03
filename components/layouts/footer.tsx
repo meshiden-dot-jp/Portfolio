@@ -1,28 +1,21 @@
 import React from 'react'
 import Icons from './icons'
+import Lowernav from './lowernav'
+import Copyright from './copyright'
 
 const footer = () => {
     return (
-        <div className='border-t-[1px] pt-6 no-print'>
-            <div className='h-auto pb-6 w-[90%] sm:flex sm:justify-between m-auto'>
-                <div>
-                    {/* <a className='flex' href="/">
-                        <p className='text-4xl leading-[48px] pr-4 font-[din-2014] font-bold'>iIDa</p>
-                        <p className='font-[din-2014] font-bold'>
-                            Frontend Engineer <br />
-                            UI Designer
-                        </p>
-                    </a> */}
-                    <Icons />
+        <div className='bg-[#f5f5f7] text-[#6c6c6c] py-12 no-print'>
+            <div className='h-auto w-[90%]  m-auto'>
+                <div className='sm:flex sm:flex-row-reverse justify-between sm:pb-16'>
+                    <div className='flex justify-center pb-6'>
+                        <Icons />
+                    </div>
+                    <ul className='flex flex-wrap justify-center gap-8 gap-y-0 pb-6'>
+                        <Lowernav />
+                    </ul>
                 </div>
-
-                <ul className='grid grid-cols-1 sm:gap-3 gap-2 sm:pt-0 pt-8 sm:text-right font-[Noto Sans JP] font-bold text-sm'>
-                    <li><a href="/work">作品一覧</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/news">お知らせ</a></li>
-                    <li><a href="/blog">技術ブログ</a></li>
-                    <li><a href="/contact">お問い合わせ</a></li>
-                </ul>
+                <Copyright />
             </div>
         </div>
     )

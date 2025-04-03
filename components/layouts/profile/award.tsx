@@ -6,12 +6,12 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-const invoices = [
+const items = [
   {
     year: "2024",
     award: (
       <>
-        <a href="https://topaz.dev/projects/ac3c682bb55442262681">Progateハッカソン 優秀賞 <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://topaz.dev/projects/ac3c682bb55442262681">Progateハッカソン 優秀賞（団体） <i className="fa-solid fa-arrow-up-right-from-square"></i></a>
       </>
     ),
   },
@@ -19,8 +19,8 @@ const invoices = [
     year: "2022",
     award: (
       <>
-        <a href="https://express.adobe.com/page/SQ8KHbD94RDKy/">SDGsクリエイティブアイデアコンテスト2021 優秀賞 <i className="fa-solid fa-arrow-up-right-from-square"></i></a><br />
-        <p>平塚秦野地区県立学校交通安全大会ポスターの部 最優秀賞</p>
+        <a href="https://express.adobe.com/page/SQ8KHbD94RDKy/">SDGsクリエイティブアイデアコンテスト2021 優秀賞（個人） <i className="fa-solid fa-arrow-up-right-from-square"></i></a><br />
+        <p>平塚秦野地区県立学校交通安全大会ポスターの部 最優秀賞（個人）</p>
       </>
     ),
   },
@@ -32,10 +32,10 @@ const award = () => {
       <h2>受賞歴</h2>
       <Table>
         <TableBody>
-          {invoices.map((invoice) => (
-            <TableRow key={invoice.year}>
-              <TableCell className="font-medium align-text-top">{invoice.year}</TableCell>
-              <TableCell className="">{invoice.award}</TableCell>
+          {items.map((item) => (
+            <TableRow key={item.year}>
+              <TableCell className="w-[20%] font-medium align-text-top pl-2 sm:pl-4">{item.year}</TableCell>
+              <TableCell className="pr-2 sm:pr-4">{item.award}</TableCell>
             </TableRow>
           ))}
         </TableBody>
