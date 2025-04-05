@@ -46,7 +46,7 @@ const ContactPage = () => {
         setTimeout(() => {
           window.location.reload()
         }, 1500);
-        
+
       }, 1000);
     } catch (error) {
       console.error("reCAPTCHA error:", error);
@@ -58,11 +58,11 @@ const ContactPage = () => {
     <div className="sm:w-[70%] w-[90%] m-auto pb-12 bg-white">
       <h1>お問い合わせ</h1>
       <p className="pb-8">
-        本ページに関するお問い合わせは、以下のフォームにご記入ください。
+        本ページおよびサイト運営者に関するお問い合わせは、以下のフォームにご記入ください。
         このフォームに入力された個人情報は、お問い合わせ内容の回答のみに使用されます。
       </p>
       <Separator />
-      <p className="nes pt-4 pb-12">*必須の質問です。</p>
+      <p className="nes text-sm pt-4 pb-12">*必須の質問です。</p>
 
       <form
         id="contact-form"
@@ -136,17 +136,19 @@ const ContactPage = () => {
           <div className="flex justify-center">
             <Button className="sm:w-1/4 w-full" type="submit">送信する</Button>
           </div>
-          <p className="pt-12 text-xs text-center text-gray-500 leading-5">
-          このフォームでパスワードを送信しないでください。
-          </p>
-          <p className="pt-2 text-xs text-center text-gray-500 leading-5">このフォームはreCAPTCHAによって保護されており、 Googleの
-            <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/privacy/">プライバシーポリシー</a>と
-            <a className='border-b-[1.5px] border-gray-500' href="https://www.google.com/intl/ja/policies/terms/">利用規約</a>が適用されます。
-          </p>
-          <p className="pt-2 text-xs text-center text-gray-500 leading-5">送信することで、 当サイトの
-            <a className='border-b-[1.5px] border-gray-500' href="/privacy">プライバシーポリシー</a>と
-            <a className='border-b-[1.5px] border-gray-500' href="/disclaimer">免責事項</a>に同意したことになります。
-          </p>
+          <div className="grid justify-center text-[11px]">
+            <p className="flex gap-[2px] pt-12 leading-5b before:content-['※']">
+              <span>このフォームでパスワードを送信しないでください。</span>
+            </p>
+            <p className="flex gap-[2px] pt-2 leading-5 before:content-['※']"><span>このフォームはreCAPTCHAによって保護されており、 Googleの
+              <a className="b" href="https://www.google.com/intl/ja/policies/privacy/">プライバシーポリシー</a>と
+              <a className="b" href="https://www.google.com/intl/ja/policies/terms/">利用規約</a>が適用されます。</span>
+            </p>
+            <p className="flex gap-[2px] pt-2 leading-5 before:content-['※']"><span>送信することで、 当サイトの
+              <a className="b" href="/privacy">プライバシーポリシー</a>と
+              <a className="b" href="/disclaimer">免責事項</a>に同意したことになります。</span>
+            </p>
+          </div>
         </div>
       </form>
 

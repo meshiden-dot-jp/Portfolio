@@ -71,8 +71,15 @@ export default function Home() {
       {/* 下部コンテンツ（アニメーション終了後、1秒遅延して表示） */}
       {showContent && (
         <>
-          <main className="w-[90%] h-[calc(100vh-60px)] m-auto min-h-screen">
+          <main className="w-[90%] h-[calc(100vh-60px)] m-auto min-h-screen pt-[4%]">
             {/* <Image src="/image/BG.JPG" alt="" fill className="object-cover"/> */}
+            {/* <div className="flex items-center justify-center h-[calc(100%-180px)] border-4 border-black rounded-3xl">
+              <span>
+              <p className="text-center sm:text-5xl text-3xl font-bold">ポートフォリオ</p>
+              <p className="text-center sm:text-2xl text-base font-bold">meshiden.jp</p>
+              </span>
+              
+            </div> */}
           </main>
           <Work />
           <Profile />

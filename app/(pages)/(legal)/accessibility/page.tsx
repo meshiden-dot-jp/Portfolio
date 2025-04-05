@@ -16,13 +16,13 @@ const page = () => {
             </ul>
 
             <h4>アクセシビリティ基準の準拠</h4>
-            <p>当サイトは、<a className='border-b-[1.5px] border-black' href="https://www.w3.org/TR/WCAG/" target="_blank" rel="noopener noreferrer">WCAG (Web Content Accessibility Guidelines)</a> に準拠することを目標としています。</p>
+            <p>当サイトは、<a className='b' href="https://www.w3.org/TR/WCAG/" target="_blank" rel="noopener noreferrer">WCAG (Web Content Accessibility Guidelines)</a> に準拠することを目標としています。</p>
 
             <h4>今後の取り組み</h4>
             <p>ユーザーの皆様からのフィードバックをもとに、引き続きウェブアクセシビリティの改善に取り組んでまいります。</p>
 
             <h4>お問い合わせ</h4>
-            <p>当サイトのアクセシビリティに関するご意見・ご質問は、当サイト内の<a className='border-b-[1.5px] border-black' href='/contact'>お問い合わせフォーム</a>までお願いいたします。</p>
+            <p>当サイトのアクセシビリティに関するご意見・ご質問は、当サイト内の<a className='b' href='/contact'>お問い合わせフォーム</a>までお願いいたします。</p>
 
             <p className='flex justify-end pt-16'>最終更新日: 2025年2月7日</p>
         </div>

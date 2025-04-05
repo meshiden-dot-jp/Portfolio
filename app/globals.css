@@ -66,6 +66,11 @@ h5{padding-top:32px; font-size: 1.138rem; padding-bottom:12px;}
   }
 }
 
+.b{
+  border-bottom-width: 1.5px;
+  border-color:black;
+}
+
 blockquote {
   border-left: 4px solid #d1d5db;
   padding: 16px 24px;

@@ -32,7 +32,7 @@ export default function aipolicy() {
                 当サイトは、AIの倫理的な利用と継続的な改善に努め、安全で公平な技術を提供することを約束します。
             </p>
             <h4>お問い合わせ</h4>
-            <p>本ポリシーに関するお問い合わせは、当サイト内の<a className='border-b-[1.5px] border-black' href='/contact'>お問い合わせフォーム</a>までお願いいたします。</p>
+            <p>本ポリシーに関するお問い合わせは、当サイト内の<a className='b' href='/contact'>お問い合わせフォーム</a>までお願いいたします。</p>
 
             <p className='flex justify-end pt-16'>最終更新日: 2025年2月7日</p>
         </main>

@@ -17,10 +17,10 @@ const page = () => {
           height='900'
           alt=''
         />
-        <div className='w-full lg:pt-0 pt-8'>
+        <div className='w-full lg:pt-0 pt-6 sm:text-base text-sm'>
           <p>青山学院大学理工学部情報テクノロジー学科３年</p>
-          <p className='text-4xl font-bold leading-[84px]'>飯田 優斗<span className='text-2xl pl-[5%]'>IIDA Yuto</span></p>
-          <p className='sm:text-xl text-lg font-bold sm:leading-10 leading-9'>
+          <p className='sm:text-4xl text-3xl font-bold sm:leading-[84px] leading-[64px]'>飯田 優斗<span className='sm:text-2xl text-xl pl-[5%]'>IIDA Yuto</span></p>
+          <p className='sm:text-xl text-sm font-bold sm:leading-10 leading-6'>
             はじめまして。 UIデザインとフロントエンド構築をしています。 &quot;Accessibility for All.&quot; を目標に、 誰もが使いやすいUI設計を探求しています。
           </p>
         </div>
